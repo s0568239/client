@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+#outlined-required{
+  color:#76B900;
+  width: 330px;
+ 
+}
+#outlined-password-input{
+  color: #76B900;
+  width: 330px;
+}
+
+#mensawissen{
+  color: #76B900;
+  font-style: normal;
+  font-size: 22px;
+  text-align: center;
+}
+
+button.MuiButton-containedSecondary	{
+  background-color: #76B900;
+  color:#ffffff;
+}
+
+button.MuiButton-root {
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  border-radius: 3ch;
+  margin: 2em;
+  background-color: #76B900;
+  color: #ffffff;
+  width: 8em;
+}
+
+.MuiTypography-root{
+  color: #76B900;
+}
+
