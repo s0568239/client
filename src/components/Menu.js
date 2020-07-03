@@ -19,7 +19,8 @@ import IconButton from '@material-ui/core/IconButton';
 import { Grid } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import MensaSelect from './SelectMensa'
+import MensaSelect from './SelectMensa';
+import MeineMensa from './MeineMensa'
 
 
 const mytheme = createMuiTheme({
@@ -98,7 +99,7 @@ export default function SimpleMenu() {
           <ListItem>
             <ListItemIcon><PersonIcon /></ListItemIcon>
             <ListItemText>
-              Login
+              Home
             </ListItemText>
           </ListItem>
         </Link>
@@ -110,11 +111,11 @@ export default function SimpleMenu() {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link to="/Hilfe" className={classes.link}>
+        <Link to="/mensa" className={classes.link}>
           <ListItem>
             <ListItemIcon><HelpIcon /></ListItemIcon>
             <ListItemText>
-              Hilfe
+              Meine Mensa
             </ListItemText>
           </ListItem>
         </Link>
@@ -144,7 +145,7 @@ export default function SimpleMenu() {
                         <Route exact path="/test">
                           Registrieren
               </Route>
-                        <Route exact path="/Hilfe">
+                        <Route exact path="/mensa">
                           Hilfe
               </Route>
                       </Switch>
@@ -215,8 +216,8 @@ export default function SimpleMenu() {
                       Bestätigen
         	            </Button>
                   </Route>
-                  <Route exact path="/Hilfe">
-                    Hilfe
+                  <Route exact path="/mensa">
+                    <MeineMensa/>
               </Route>
                 </Switch>
               </React.Fragment>

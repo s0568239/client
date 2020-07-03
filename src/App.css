@@ -82,3 +82,14 @@ button.MuiButton-root {
   color: #76B900;
 }
 
+#linia {
+  position: absolute;
+width: 325.01px;
+height: 0px;
+left: 13px;
+top: 150px;
+
+border: 1px solid #747474;
+transform: rotate(0.03deg);
+}
+
