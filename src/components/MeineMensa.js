@@ -16,7 +16,7 @@ export default function MeineMensa() {
         setmensaName(event.target.value)
         console.log(allemensa)
     }
-
+    //Man hasse ich dich
     const alertF = () => {
         alert(mensaName)
         
