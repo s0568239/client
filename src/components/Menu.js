@@ -130,18 +130,18 @@ export default function SimpleMenu() {
     <Router>
       <div>
         {["left"].map(anchor => (
-          <Grid>
+          <Grid >
             <MuiThemeProvider theme={mytheme}>
               <React.Fragment key={anchor}>
                 <AppBar title="Login" position="static" onLef color="primary">
                   <Toolbar>
-                  
+
                     <IconButton edge="start" color="secondary" aria-label="menu">
                       <MenuIcon onClick={toggleDrawer(anchor, true)}>{anchor}</MenuIcon>
                       {/* <img src="\in_app_logo_big.png" alt="Mensa-Wissen App Logo"/> */}
-                      
+
                     </IconButton>
-                    <img src="\in_app_logo_big.png" alt="Mensa-Wissen App Logo"/>
+
                     <Typography variant="h6" color="secondary">
                       <Switch>
                         <Route exact path="/">
@@ -154,10 +154,20 @@ export default function SimpleMenu() {
                           Hilfe
               </Route>
                       </Switch>
+                    
                     </Typography>
+                    
+                    <Grid item xs />
+                    <Grid item>
+                      <IconButton>
+                        <img src="\in_app_logo_big.png" alt="Mensa-Wissen App Logo" />
+                      </IconButton>
+                    </Grid>
+
                   </Toolbar>
+                  
                 </AppBar>
-                
+
                 <SwipeableDrawer
                   anchor={anchor}
                   open={state[anchor]}
@@ -167,37 +177,37 @@ export default function SimpleMenu() {
                   {list(anchor)}
                 </SwipeableDrawer>
                 <div>
-                <Switch>
-                  <Route exact path="/">
-                    <MyHome/>
-                  </Route>
-                  <Route exact path="/test">
-                    <br />
-                    <h2 id='mensawissen'>DANKE, DASS SIE MENSA-WISSEN NUTZEN</h2>
-                    <br />
-                    <TextField
-                      required
-                      id="outlined-required"
-                      label="Benutzer neu"
-                      margin='normal'
-                    /><div /><br /><br />
-                    <TextField
-                      required
-                      id="outlined-password-input"
-                      type="password"
-                      label="Password neu"
-                      margin='normal'
-                    />
-                    <MensaSelect />
+                  <Switch>
+                    <Route exact path="/">
+                      <MyHome />
+                    </Route>
+                    <Route exact path="/test">
+                      <br />
+                      <h2 id='mensawissen'>DANKE, DASS SIE MENSA-WISSEN NUTZEN</h2>
+                      <br />
+                      <TextField
+                        required
+                        id="outlined-required"
+                        label="Benutzer neu"
+                        margin='normal'
+                      /><div /><br /><br />
+                      <TextField
+                        required
+                        id="outlined-password-input"
+                        type="password"
+                        label="Password neu"
+                        margin='normal'
+                      />
+                      <MensaSelect />
 
-                    <Button variant="contained">
-                      Bestätigen
+                      <Button variant="contained">
+                        Bestätigen
         	            </Button>
-                  </Route>
-                  <Route exact path="/mensa">
-                    <MeineMensa/>
-              </Route>
-                </Switch></div>
+                    </Route>
+                    <Route exact path="/mensa">
+                      <MeineMensa />
+                    </Route>
+                  </Switch></div>
               </React.Fragment>
             </MuiThemeProvider>
           </Grid>
