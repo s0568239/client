@@ -93,3 +93,53 @@ border: 1px solid #747474;
 transform: rotate(0.03deg);
 }
 
+#HomeTitle1{
+color: #000000;
+font-family: Open Sans 'Roboto Light';
+font-style: normal;
+font-weight: 600;
+font-size: 22px;
+line-height: 27px;
+letter-spacing: -1.5px;
+flex-direction: column;
+justify-content: center;
+text-align: left;
+}
+
+#HomeTitle2{
+  color: #696969;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: -1.5px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  }
+
+  #HomeSchedule{
+    color: #B0E0E6;
+    font-family: Open Sans 'Roboto Light';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: -1.5px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background : url(//client/src/imgs/in_app_logo_big.png); 
+    }
+
+    #line {
+      border: 1px solid;
+      color: #696969;
+    }
+
+    img {
+      position: absolute;
+      text-align: right;
+      width: 50px;
+    }

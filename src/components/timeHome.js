@@ -247,7 +247,7 @@ class TimeHome extends Component {
             }
             return foods;
         } else {
-            return <h2>Heute gibt es kein Essen :(</h2>;
+        return <p id='#HomeSchedule'>Heute gibt es kein Essen :(</p>;
         }
     };
 
@@ -262,8 +262,8 @@ class TimeHome extends Component {
 
         return (
             <div>
-                <p>Öffnungszeiten</p>
-                <hr></hr>
+                <h2 id = 'HomeTitle2'>Öffnungszeiten</h2>
+                <hr id='line'></hr>
                 {
                     (isEmpty2) ?
                         <div > {
@@ -281,7 +281,7 @@ class TimeHome extends Component {
                         </div>
 
 
-                        : <div>So
+                        : <div>
                             <p>{this.state.safeDate}</p>
                             <div >
                                 <IconButton color="secondary" aria-label="add an alarm" onClick={this.backDay}>
@@ -293,8 +293,8 @@ class TimeHome extends Component {
                         </div>
 
 
-                }<p>Gerichte</p>
-                <hr />
+                }<h2 id='HomeTitle2'>Gerichte</h2>
+                <hr id='line'></hr>
                 <Gerichte />
                 {this.EssenFoods()}
             </div>

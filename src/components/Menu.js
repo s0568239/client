@@ -135,8 +135,11 @@ export default function SimpleMenu() {
               <React.Fragment key={anchor}>
                 <AppBar title="Login" position="static" onLef color="primary">
                   <Toolbar>
+                  
                     <IconButton edge="start" color="secondary" aria-label="menu">
                       <MenuIcon onClick={toggleDrawer(anchor, true)}>{anchor}</MenuIcon>
+                      <img src="\in_app_logo_big.png" alt="Mensa-Wissen App Logo"/>
+                      
                     </IconButton>
                     <Typography variant="h6" color="secondary">
                       <Switch>
