@@ -8,21 +8,23 @@ export default class MeineMensa extends React.Component {
         this.state = {
             mensaName: null,
             data: null,
-            liebling: [],
+            liebling: NaN,
             isLoaded: false
         };
     }
 
 
     //https://www.robinwieruch.de/react-fetching-data
-    componentWillMount() {
+    async componentDidMount() {
         this.setState({ isLoaded: true })
-        fetch('/mensen')
-            .then(response => response.json())
-            .then(data => this.setState({ data }));
-        fetch('/mymensa')
-            .then(response => response.json())
-            .then(liebling => this.setState({ liebling }));
+
+        const response = await fetch('/mensen');
+        const mdata = await response.json();
+        this.setState({ data: mdata });
+
+        const response2 = await fetch('/mymensa');
+        const mdata2 = await response2.json();
+        this.setState({ liebling: mdata2 });
     }
 
     selecting = (event) => {
@@ -56,28 +58,24 @@ export default class MeineMensa extends React.Component {
 
     render() {
         const { liebling, isLoaded } = this.state
-        return (
-            <div>
-                {
-                    (isLoaded) ?
-                        liebling.map(titel => {
-                            const { name } = titel;
-                            return (
-                                <div>
-                                    <h2>Meine Lieblingsmensa</h2>
-                                    <p>{name}</p>
-                                    <h1>Mensa auswählen</h1>
-                                    <hr id='linia'></hr>
-                                    <MensaSelect value={this.state.mensaName} select={this.selecting} />
-                                    <Button onClick={this.alertF}>Speichern</Button>
-                                </div>
-                            )
-                        }
+        console.log(liebling.name)
+        if (isLoaded) {
+            return (
+                <div>
+                    <h2>Meine Lieblingsmensa</h2>
+                    <p>{liebling.name}</p>
+                    <h1>Mensa auswählen</h1>
+                    <hr id='linia'></hr>
+                    <MensaSelect value={this.state.mensaName} select={this.selecting} />
+                    <Button onClick={this.alertF}>Speichern</Button>
+                </div>
 
-                        ) : <p>no test</p>
+            )
+        }else{
+            return <p>sdfsdf</p>
+        }
 
-                } </div>
-        )
+
     }
 }
 

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import TimeHome from './timeHome'
 
 
-class MyHome extends React.Component {
+class MyHome extends Component {
     constructor(props) {
         super(props);
 
@@ -12,7 +12,7 @@ class MyHome extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({ isLoaded: true })
         fetch('/mymensa')
             .then(response => response.json())
@@ -21,27 +21,20 @@ class MyHome extends React.Component {
 
     render() {
         const { data, isLoaded } = this.state
-        return (
-            <React.Fragment>
-                {
-                    (isLoaded) ?
-                        data.map(titel => {
-                            const { name } = titel;
-                            return (
-                                <div>
-                                    <h2>{name}</h2>
-                                    <TimeHome/>
-                                    
-                                </div>
-                            )
-                        }
+        if (isLoaded) {
+            return (
+                <div>
+                    <h2>{data.name}</h2>
+                    <TimeHome />
 
-                        ) : <p>no test</p>
-                }
+                </div>
+            )
+        }else{
+            return(
+                <p>Laden...</p>
+            )
+        }
 
-            </React.Fragment>
-
-        )
     }
 }
 export default MyHome
