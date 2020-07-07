@@ -24,7 +24,7 @@ class MyHome extends Component {
         if (isLoaded) {
             return (
                 <div>
-                    <h2>{data.name}</h2>
+                    <h2>{data.name}sadasdasd</h2>
                     <TimeHome />
 
                 </div>
