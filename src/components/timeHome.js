@@ -57,6 +57,10 @@ const useStyles = theme => ({
     pos: {
         marginBottom: 12,
     },
+
+    flechaDerecha: {
+        
+        }
 });
 
 
@@ -257,7 +261,7 @@ class TimeHome extends Component {
         const days = ["Mon", "Di", "Mi", "Do", "Fr", "Sa", "So"]
         var day = NaN
         var dayN = NaN
-
+        const { classes } = this.props;
         return (
             <div>
                 <h2 id = 'HomeTitle2'>Öffnungszeiten</h2>
@@ -286,7 +290,7 @@ class TimeHome extends Component {
                                     <ArrowBackIosOutlinedIcon />
                                 </IconButton>
                                 <IconButton color="secondary" aria-label="add an alarm" onClick={this.nextDay}>
-                                    <ArrowForwardIosIcon />
+                                    <ArrowForwardIosIcon className={classes.flechaDerecha}/>
                                 </IconButton></div>
                         </div>
 
