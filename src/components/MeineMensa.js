@@ -25,7 +25,7 @@ export default class MeineMensa extends React.Component {
 
         const response2 = await fetch('/mymensa');
         const mdata2 = await response2.json();
-        console.log(mdata2[0].name+" mdata2")
+
         this.setState({ liebling: mdata2[0] });
         
 
