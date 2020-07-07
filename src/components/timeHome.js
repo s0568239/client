@@ -42,16 +42,14 @@ function todayData(dateNow) {
 
 const useStyles = theme => ({
     root: {
-        minWidth: 700,
-        width: 700,
+        minWidth: 70,
+        marginLeft: 10,
+        marginRight: 10,
         marginTop: 20,
+        marginBottom: 10,
         margin: 'auto',
-        position: "center"
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
+        position: "left",
+        backgroundColor: '#DCDCDC'
     },
     title: {
         fontSize: 200,
