@@ -7,7 +7,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import HomeIcon from '@material-ui/icons/Home';
+import PersonIcon from '@material-ui/icons/Person';
 import HowToRegIcon from '@material-ui/icons/HowToReg';
 import HelpIcon from '@material-ui/icons/Help';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -20,8 +20,7 @@ import { Grid } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import MensaSelect from './SelectMensa';
-import MeineMensa from './MeineMensa';
-import MyHome from './Home';
+import MeineMensa from './MeineMensa'
 
 
 const mytheme = createMuiTheme({
@@ -98,7 +97,7 @@ export default function SimpleMenu() {
       <List>
         <Link to="/" className={classes.link}>
           <ListItem>
-            <ListItemIcon><HomeIcon /></ListItemIcon>
+            <ListItemIcon><PersonIcon /></ListItemIcon>
             <ListItemText>
               Home
             </ListItemText>
@@ -141,7 +140,7 @@ export default function SimpleMenu() {
                     <Typography variant="h6" color="secondary">
                       <Switch>
                         <Route exact path="/">
-                          Home
+                          Login
               </Route>
                         <Route exact path="/test">
                           Registrieren
@@ -164,7 +163,35 @@ export default function SimpleMenu() {
                 </SwipeableDrawer>
                 <Switch>
                   <Route exact path="/">
-                    <MyHome/>
+                    <br /><br /><br />
+                    <h2 id='mensawissen'>WILLKOMEN AUF MENSA-WISSEN</h2>
+                    <br /><br />
+                    <TextField
+                      required
+                      id="outlined-required"
+                      label="User"
+                      defaultValue="Benutzer eingeben"
+                      variant="outlined"
+                      margin='normal'
+                    /><div /><br /><br />
+                    <TextField
+                      required
+                      id="outlined-password-input"
+                      type="password"
+                      label="Password"
+                      defaultValue="Benutzer eingeben"
+                      variant="outlined"
+                      margin='normal'
+                    />
+
+
+                    <Button variant="contained">
+                      NEU?
+        	            </Button>
+
+                    <Button variant="contained">
+                      EINLOGGEN TEST
+        	             </Button>
                   </Route>
                   <Route exact path="/test">
                     <br />

@@ -1,39 +1,90 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 import MensaSelect from './SelectMensa';
 import Button from '@material-ui/core/Button';
-import UseDataFetch from './FetchMensa'
 
-export default function MeineMensa() {
-    const [mensaName, setmensaName] = React.useState("")
-    const allemensa = UseDataFetch('/mensen')
-
-
-    const selecting = (event) => {
-        setmensaName(event.target.value)
-        console.log(allemensa)
+export default class MeineMensa extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            mensaName: null,
+            data: null,
+            liebling: [],
+            isLoaded: false
+        };
     }
-    //Man hasse ich dich
-    const alertF = () => {
-        alert(mensaName)
-        
-        
+
+
+    //https://www.robinwieruch.de/react-fetching-data
+    componentWillMount() {
+        this.setState({ isLoaded: true })
+        fetch('/mensen')
+            .then(response => response.json())
+            .then(data => this.setState({ data }));
+        fetch('/mymensa')
+            .then(response => response.json())
+            .then(liebling => this.setState({ liebling }));
     }
-    
-    return (
-        <div>
-            <h2>Meine Lieblingsmensa</h2>
-            <hr id = 'linia'></hr>
-            <p>{mensaName}</p>
-        
-    
-            <h1>Mensa auswählen</h1>
-            <hr id = 'linia'></hr>
-            <MensaSelect value = {mensaName} select={selecting}/>
-            <Button onClick={alertF}>LOL</Button>
-        </div>
-    );
+
+    selecting = (event) => {
+        this.setState({ mensaName: event.target.value })
+    }
+
+    postrequest = () => fetch('/mymensa', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(this.getData())
+    })
+
+    getData() {
+        var dataM = {}
+        for (var x in this.state.data) {
+            if (this.state.data[x].name === this.state.mensaName) {
+                dataM = this.state.data[x]
+            }
+
+        }
+        return dataM
+    }
+
+    alertF = () => {
+        this.postrequest()
+        window.location.reload(false);
+    }
+
+    render() {
+        const { liebling, isLoaded } = this.state
+        return (
+            <div>
+                {
+                    (isLoaded) ?
+                        liebling.map(titel => {
+                            const { name } = titel;
+                            return (
+                                <div>
+                                    <h2>Meine Lieblingsmensa</h2>
+                                    <p>{name}</p>
+                                    <h1>Mensa auswählen</h1>
+                                    <hr id='linia'></hr>
+                                    <MensaSelect value={this.state.mensaName} select={this.selecting} />
+                                    <Button onClick={this.alertF}>Speichern</Button>
+                                </div>
+                            )
+                        }
+
+                        ) : <p>no test</p>
+
+                } </div>
+        )
+    }
 }
+
+
+
+
+
+
+
+
