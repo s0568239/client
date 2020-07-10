@@ -61,36 +61,29 @@ button.MuiButton-containedSecondary	{
 
 button.MuiButton-root {
   padding: 6px 16px;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   min-width: 64px;
   box-sizing: border-box;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family:  Open Sans 'Roboto Light';
   font-weight: 500;
   line-height: 1.75;
   border-radius: 4px;
   letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  border-radius: 3ch;
+  text-transform: capitalize;
+  border-radius: 8;
   margin: 2em;
   background-color: #76B900;
   color: #ffffff;
   width: 8em;
+  position: absolute;
+  margin-top: 2em;
+  margin-left: -42em;
+
 }
 
 .MuiTypography-root{
   color: #76B900;
-}
-
-#linia {
-  position: absolute;
-width: 325.01px;
-height: 0px;
-left: 13px;
-top: 150px;
-
-border: 1px solid #747474;
-transform: rotate(0.03deg);
 }
 
 #HomeTitle1{
@@ -138,6 +131,8 @@ margin-left: 10px;
     #line {
       border: 1px solid;
       color: #696969;
+      margin-left: 10px;
+      margin-right: 10px;
     }
 
     img {
@@ -145,5 +140,19 @@ margin-left: 10px;
       text-align: right;
       width: 40px;
     }
+
+    #ButtonMensa{
+      color: #696969;
+      font-family: Open Sans 'Roboto Light';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: -1.5px;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      margin-left: 10px;
+      }
 
     

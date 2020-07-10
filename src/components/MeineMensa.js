@@ -1,8 +1,9 @@
 import React from "react";
 import MensaSelect from './SelectMensa';
 import Button from '@material-ui/core/Button';
+import {positions} from '@material-ui/system';
 
-export default class MeineMensa extends React.Component {
+class MeineMensa extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +27,7 @@ export default class MeineMensa extends React.Component {
         const mdata2 = await response2.json();
 
         this.setState({ liebling: mdata2[0] });
-        
+
     }
 
     selecting = (event) => {
@@ -54,7 +55,7 @@ export default class MeineMensa extends React.Component {
             .then(response => response.json())
             .then(data => console.log(data));
     }
-     
+
 
     getData() {
         var dataM = {}
@@ -70,31 +71,37 @@ export default class MeineMensa extends React.Component {
 
     alertF = () => {
         this.postrequest()
-        window.location.reload(false); 
+        window.location.reload(false);
     }
 
     render() {
         const { liebling, isLoaded } = this.state
-
+        
         if (isLoaded) {
             return (
                 <div>
-                    <h2>Meine Lieblingsmensa</h2>
-                    <p>{liebling.name}</p>
-                    <h1>Mensa auswählen</h1>
-                    <hr id='linia'></hr>
-                    <MensaSelect value={this.state.mensaName} select={this.selecting} />
-                    <Button onClick={this.alertF}>Speichern</Button>
+                    <div>
+                        <h2 id='HomeTitle2'>Aktuelle Lieblingsmensa</h2>
+                        <hr id='line'></hr>
+                        <p id='HomeTitle1'>{liebling.name}</p>
+                        <h2 id='HomeTitle2'>Mensa auswählen</h2>
+                        <hr id='line'></hr>
+                    </div>
+                    <div>
+                        <MensaSelect value={this.state.mensaName} select={this.selecting} />
+                        <Button onClick={this.alertF}>Speichern</Button>
+                    </div>
                 </div>
 
             )
-        }else{
-            return <p>sdfsdf</p>
+        } else {
+            return <p>Daten werden geladen...</p>
         }
 
 
     }
 }
+export default MeineMensa
 
 
 

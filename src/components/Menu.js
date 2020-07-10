@@ -50,6 +50,10 @@ const mytheme = createMuiTheme({
 });
 
 const useStyles = makeStyles({
+
+  FormControl:{
+    minWidth: 12000
+  },
   list: {
     width: 200
   },

@@ -26,7 +26,7 @@ class MyHome extends Component {
         if (isLoaded) {
             return (
                 <div>
-                    <h1 id="HomeTitle1">{data2[0].name}</h1>
+                    <p id="HomeTitle1">{data2[0].name}</p>
                     <TimeHome />
 
                 </div>
