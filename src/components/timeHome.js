@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Gerichte from './Gerichte';
 import { withStyles } from '@material-ui/core/styles';
-import LikeIcon from './likeIcon'
+import LikeIcon from './likeIcon function way'
 
 
 

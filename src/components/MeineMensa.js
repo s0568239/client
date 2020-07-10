@@ -1,7 +1,6 @@
 import React from "react";
 import MensaSelect from './SelectMensa';
 import Button from '@material-ui/core/Button';
-import { ConnectionBase } from "mongoose";
 
 export default class MeineMensa extends React.Component {
     constructor(props) {
@@ -28,7 +27,6 @@ export default class MeineMensa extends React.Component {
 
         this.setState({ liebling: mdata2[0] });
         
-
     }
 
     selecting = (event) => {
