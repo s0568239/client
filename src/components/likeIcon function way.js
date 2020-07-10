@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import IconButton from '@material-ui/core/IconButton';
+import Thedata from './FetchGerichte'
 
 
 export default function LikeIcon(props) {
@@ -9,22 +10,6 @@ export default function LikeIcon(props) {
     const [isDelete, setisDelete] = useState(true);
     const [isAdded, setisAdded] = useState(false);
     //Fetch Lieblingsgerichte
-    const Thedata = () => {
-        const [readyLiebling, setreadyLiebling] = useState([]);
-        useEffect(() => {
-            const loadData = async () => {
-                const response = await fetch('/mygericht/')
-                const data = await response.json()
-                //console.log(data)
-                setreadyLiebling(data)
-                //console.log(this.state.readyLiebling[2].id + " testing")
-            };
-            loadData('/mygericht/')
-
-        }, []);
-        return readyLiebling
-    }
-
     const g = props.g
     const meineGerichte = Thedata()
 

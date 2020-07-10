@@ -22,6 +22,9 @@ import Button from '@material-ui/core/Button';
 import MensaSelect from './SelectMensa';
 import MeineMensa from './MeineMensa';
 import MyHome from './Home';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
+import Gerichte from './Gerichte';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 
 
 const mytheme = createMuiTheme({
@@ -108,19 +111,19 @@ export default function SimpleMenu() {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link to="/test" className={classes.link}>
+        <Link to="/mensa" className={classes.link}>
           <ListItem>
-            <ListItemIcon><HowToRegIcon /></ListItemIcon>
+            <ListItemIcon><AccountBalanceIcon /></ListItemIcon>
             <ListItemText>
-              Registrieren
+              Meine Mensa
             </ListItemText>
           </ListItem>
         </Link>
-        <Link to="/mensa" className={classes.link}>
+        <Link to="/lovefood" className={classes.link}>
           <ListItem>
-            <ListItemIcon><HelpIcon /></ListItemIcon>
+            <ListItemIcon><FastfoodIcon /></ListItemIcon>
             <ListItemText>
-              Meine Mensa
+              Meine Gerichte
             </ListItemText>
           </ListItem>
         </Link>
@@ -151,16 +154,17 @@ export default function SimpleMenu() {
                         <Route exact path="/">
                           Home
               </Route>
-                        <Route exact path="/test">
-                          Registrieren
-              </Route>
+
                         <Route exact path="/mensa">
                           Hilfe
               </Route>
+                        <Route exact path="/lovefood">
+                          Meine Gerichte
+              </Route>
                       </Switch>
-                    
+
                     </Typography>
-                    
+
                     <Grid item xs />
                     <Grid item>
                       <IconButton>
@@ -169,7 +173,7 @@ export default function SimpleMenu() {
                     </Grid>
 
                   </Toolbar>
-                  
+
                 </AppBar>
 
                 <SwipeableDrawer
@@ -210,6 +214,9 @@ export default function SimpleMenu() {
                     </Route>
                     <Route exact path="/mensa">
                       <MeineMensa />
+                    </Route>
+                    <Route exact path="/lovefood">
+                      <Gerichte />
                     </Route>
                   </Switch></div>
               </React.Fragment>
