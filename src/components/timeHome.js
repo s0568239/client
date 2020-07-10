@@ -100,7 +100,7 @@ class TimeHome extends Component {
         let day_date = FormatDate(date)
         const days = ["Mon", "Di", "Mi", "Do", "Fr", "Sa", "So"]
         var dayweek = days[date.getDay() - 1]
-        console.log(dayweek)
+        
         this.setState({ safeDate: day_date, daysWeek: dayweek })
         var canteen_id = ""
 
@@ -112,7 +112,6 @@ class TimeHome extends Component {
         }).then(function (data) {
             canteen_id = data[0].id;
 
-            console.log(canteen_id, '\n' + day_date);
             var url = 'https://openmensa.org/api/v2/canteens/' + canteen_id + '/days/' + day_date
             return fetch(url); // make a 2nd request and return a promise
         })
@@ -134,7 +133,6 @@ class TimeHome extends Component {
         }).then(function (data) {
             canteen_id = data[0].id;
 
-            console.log(canteen_id, '\n' + day_date);
             var urli = 'https://openmensa.org/api/v2/canteens/' + canteen_id + '/days/' + day_date + '/meals'
             console.log(urli)
             return fetch(urli); // make a 2nd request and return a promise
@@ -195,9 +193,9 @@ class TimeHome extends Component {
         }).then(function (data) {
             canteen_id = data[0].id;
 
-            console.log(canteen_id, '\n' + day_date);
+            
             var urli = 'https://openmensa.org/api/v2/canteens/' + canteen_id + '/days/' + day_date + '/meals'
-            console.log(urli)
+            
             return fetch(urli); // make a 2nd request and return a promise
         })
             .then(function (response) {

@@ -7,30 +7,32 @@ class MyHome extends Component {
         super(props);
 
         this.state = {
-            data: [],
+            data2: [],
             isLoaded: false
         };
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+
+        const response = await fetch('/mymensa');
+        const data = await response.json();
+        this.setState({ data2: data })
         this.setState({ isLoaded: true })
-        fetch('/mymensa')
-            .then(response => response.json())
-            .then(data => this.setState({ data }));
     }
 
     render() {
-        const { data, isLoaded } = this.state
+        const { data2, isLoaded } = this.state
+        //console.log(data2[0].name + " this data")
         if (isLoaded) {
             return (
                 <div>
-                    <h1 id="HomeTitle1">{data.name}Mensa Htw Berlin</h1>
+                    <h1 id="HomeTitle1">{data2[0].name}</h1>
                     <TimeHome />
 
                 </div>
             )
-        }else{
-            return(
+        } else {
+            return (
                 <p>Laden...</p>
             )
         }

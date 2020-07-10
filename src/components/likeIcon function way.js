@@ -54,7 +54,6 @@ export default function LikeIcon(props) {
         };
         const response = await fetch('/mygericht/' + tg.id, requestOptions);
         const data = await response.json();
-        console.log(data)
     }
 
     const isLiebling = () => {
@@ -64,14 +63,14 @@ export default function LikeIcon(props) {
 
             //console.log(meineGerichte[1].id + " mm")
             if (g.id == meineGerichte[i].id) {
-                console.log(meineGerichte[i].id)
+                
                 bool.push(<FavoriteOutlinedIcon />);
 
             } else {
                 bool.push(<FavoriteBorderOutlinedIcon />);
                 bool.pop(0)
             }
-            console.log(bool2[i])
+            
 
         } return bool
     }
@@ -89,11 +88,11 @@ export default function LikeIcon(props) {
             )
         } else{
             return(
-                <IconButton onClick={() => { deleteGericht(g) }}>
+                <IconButton onClick={() => { deleteGericht(g); window.location.reload() }}>
                     <FavoriteOutlinedIcon/>
                 </IconButton>
             )
-            window.location.reload()
+            
         }
     } else {
         if (isDelete) {
