@@ -7,7 +7,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Gerichte from './Gerichte';
 import { withStyles } from '@material-ui/core/styles';
 import LikeIcon from './likeIcon function way'
 
@@ -295,7 +294,6 @@ class TimeHome extends Component {
 
                 }<h2 id='HomeTitle2'>Gerichte</h2>
                 <hr id='line'></hr>
-                <Gerichte />
                 {this.EssenFoods()}
             </div>
 
