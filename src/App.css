@@ -76,10 +76,6 @@ button.MuiButton-root {
   background-color: #76B900;
   color: #ffffff;
   width: 8em;
-  position: absolute;
-  margin-top: 2em;
-  margin-left: -42em;
-
 }
 
 .MuiTypography-root{
