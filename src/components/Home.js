@@ -28,7 +28,6 @@ class MyHome extends Component {
                 <div>
                     <p id="HomeTitle1">{data2[0].name}</p>
                     <TimeHome />
-
                 </div>
             )
         } else {
