@@ -3,12 +3,17 @@ import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutline
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import useStyle from './UseStyles';
+<<<<<<< HEAD
 import Thedata from './FetchDataGericht'
+
+=======
+import Thedata from './FetchData';
+>>>>>>> 81bb229351245fb88fdb9ba0a5661f8b6aa54d36
 
 
 
 export default function LikeIcon(props) {
-
+    const lieblingsGericht = useStyle()
     const [isDelete, setisDelete] = useState(true);
     const [isAdded, setisAdded] = useState(false);
     //Fetch Lieblingsgerichte
@@ -53,10 +58,10 @@ export default function LikeIcon(props) {
             //console.log(meineGerichte[1].id + " mm")
             if (g.id == meineGerichte[i].id) {
                 
-                bool.push(<FavoriteOutlinedIcon />);
+                bool.push(<FavoriteOutlinedIcon className={lieblingsGericht.HerzIcon}/>);
 
             } else {
-                bool.push(<FavoriteBorderOutlinedIcon />);
+                bool.push(<FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} />);
                 bool.pop(0)
             }
             
@@ -72,13 +77,14 @@ export default function LikeIcon(props) {
                 <IconButton key="tableModeButton"
                     onClick={() => { postGericht(g) }}
                 >
-                    <FavoriteBorderOutlinedIcon />
+                    <FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} />
                 </IconButton>
             )
         } else{
             return(
+                
                 <IconButton onClick={() => { deleteGericht(g); window.location.reload() }}>
-                    <FavoriteOutlinedIcon/>
+                    <FavoriteOutlinedIcon className={lieblingsGericht.HerzIcon}/>
                 </IconButton>
             )
             
@@ -95,7 +101,7 @@ export default function LikeIcon(props) {
                 <IconButton key="tableModeButton"
                     onClick={() => { postGericht(g); window.location.reload() }}
                 >
-                    <FavoriteBorderOutlinedIcon />
+                    <FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} />
                 </IconButton>)
         }
         
