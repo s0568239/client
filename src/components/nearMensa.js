@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
+import React, {useState } from "react";
 import { Card, CardActions, IconButton } from "@material-ui/core";
 import CardContent from '@material-ui/core/CardContent';
 import Localitation from './fetchNearMensa';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import Thedata from './FetchData'
+import Thedata from './FetchMyMensa'
 
 
 function NearMensa() {

@@ -2,12 +2,9 @@ import React, { useState} from 'react';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import IconButton from '@material-ui/core/IconButton';
-<<<<<<< HEAD
-import Thedata from './FetchGerichte';
 import useStyle from './UseStyles';
-=======
-import Thedata from './FetchData'
->>>>>>> 63d1f2e05cf5a0a08065e84e2b3e1edb848ea1e0
+import Thedata from './FetchDataGericht'
+
 
 
 export default function LikeIcon(props) {
