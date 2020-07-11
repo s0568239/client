@@ -218,6 +218,7 @@ class TimeHome extends Component {
         if (essen2) {
             for (var i in essen2) {
                 foods.push(
+                    
                     <Card className={classes.root}>
                         <CardContent>
                             <p id='cardsMain'>

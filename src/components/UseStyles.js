@@ -6,6 +6,11 @@ const useStylesIcon = makeStyles({
     color: 'gray',
     fontSize: '40px'
   },
+  HerzIcon: {
+    color: 'blue',
+    fontSize: '40px',
+    right: '20px'
+  },
   FormControl: {
     minWidth: 12000
   },
