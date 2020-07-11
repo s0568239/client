@@ -59,11 +59,21 @@ export default function Gerichte() {
         }
 
     }
+    if(essen2 == ""){
+        
+        return( 
+        <div>
+            <p>Ruben de España le tocaron</p>
+            <hr id= 'line'/>
+        <p>LOL</p></div>
+        )
+
+    }else{
     return (
         <div>
             <p>Ruben de España le tocaron</p>
             <hr />
             {cards}
         </div>
-    )
+    )}
 }
