@@ -6,10 +6,12 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
-
+import FastfoodIcon from '@material-ui/icons/Fastfood';
+import { red } from '@material-ui/core/colors';
+import useStyles from './UseStyles';
 
 export default function Gerichte() {
-
+    const IconClass = useStyles()
     //Löscht Lieblingsgericht
     const deleteGericht = async (g) => {
         //setisDelete(false)
@@ -50,8 +52,8 @@ export default function Gerichte() {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <IconButton color="secondary" aria-label="add an alarm" onClick={() =>{deleteGericht(essen2[i]); window.location.reload()}}>
-                            <CloseIcon/>
+                        <IconButton color="secondary" aria-label="add an alarm" onClick={() => { deleteGericht(essen2[i]); window.location.reload() }}>
+                            <CloseIcon />
                         </IconButton>
                     </CardActions>
                 </Card>
@@ -59,21 +61,26 @@ export default function Gerichte() {
         }
 
     }
-    if(essen2 == ""){
-        
-        return( 
-        <div>
-            <p>Ruben de España le tocaron</p>
-            <hr id= 'line'/>
-        <p>LOL</p></div>
+    if (essen2 == "") {
+
+        return (
+            <div>
+                <p id='instructions'>Hier findest du deine Lieblingsgerichte. Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
+                <hr id='line' />
+                <div>
+                    <p id = 'emptyList'>Die Liste ist leer, gehe ins Menü und wähle deine Lieblingsgerichte aus!</p>
+                    <FastfoodIcon className = {IconClass.Icon} />
+                </div>
+            </div>
         )
 
-    }else{
-    return (
-        <div>
-            <p>Ruben de España le tocaron</p>
-            <hr />
-            {cards}
-        </div>
-    )}
+    } else {
+        return (
+            <div>
+                <p id='instructions'>Hier findest du deine Lieblingsgerichte. Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
+                <hr id='line' />
+                {cards}
+            </div>
+        )
+    }
 }

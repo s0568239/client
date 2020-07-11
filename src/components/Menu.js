@@ -23,6 +23,7 @@ import MyHome from './Home';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import Gerichte from './Gerichte';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import useStyles from './UseStyles';
 
 
 const mytheme = createMuiTheme({
@@ -48,29 +49,6 @@ const mytheme = createMuiTheme({
     },
   },
 
-});
-
-const useStyles = makeStyles({
-
-  FormControl:{
-    minWidth: 12000
-  },
-  list: {
-    width: 200
-  },
-  fullList: {
-    width: "auto"
-  },
-  link: { textDecoration: 'none' },
-
-  palette: {
-    primary: {
-      main: '#ffffff',
-    },
-    secondary: {
-      main: '#76B900',
-    },
-  }
 });
 
 export default function SimpleMenu() {

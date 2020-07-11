@@ -8,7 +8,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import LikeIcon from './likeIcon function way'
+import LikeIcon from './likeIcon function way';
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 
 
 
@@ -58,8 +59,8 @@ const useStyles = theme => ({
     },
 
     flechaDerecha: {
-        
-        }
+
+    }
 });
 
 
@@ -99,7 +100,7 @@ class TimeHome extends Component {
         let day_date = FormatDate(date)
         const days = ["Mon", "Di", "Mi", "Do", "Fr", "Sa", "So"]
         var dayweek = days[date.getDay() - 1]
-        
+
         this.setState({ safeDate: day_date, daysWeek: dayweek })
         var canteen_id = ""
 
@@ -192,9 +193,9 @@ class TimeHome extends Component {
         }).then(function (data) {
             canteen_id = data[0].id;
 
-            
+
             var urli = 'https://openmensa.org/api/v2/canteens/' + canteen_id + '/days/' + day_date + '/meals'
-            
+
             return fetch(urli); // make a 2nd request and return a promise
         })
             .then(function (response) {
@@ -239,14 +240,20 @@ class TimeHome extends Component {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <LikeIcon g={essen2[i]}/>
+                            <LikeIcon g={essen2[i]} />
                         </CardActions>
                     </Card>
                 );
             }
             return foods;
         } else {
-        return <p id='#HomeSchedule'>Heute gibt es kein Essen :(</p>;
+            return (
+                <div>
+                    <p id='emptyList'>Heute gibt es kein Essen</p>
+                    <SentimentVeryDissatisfiedIcon/>
+                </div>
+            )
+
         }
     };
 
@@ -261,7 +268,7 @@ class TimeHome extends Component {
         const { classes } = this.props;
         return (
             <div>
-                <h2 id = 'HomeTitle2'>Öffnungszeiten</h2>
+                <h2 id='HomeTitle2'>Öffnungszeiten</h2>
                 <hr id='line'></hr>
                 {
                     (isEmpty2) ?
@@ -287,7 +294,7 @@ class TimeHome extends Component {
                                     <ArrowBackIosOutlinedIcon />
                                 </IconButton>
                                 <IconButton color="secondary" aria-label="add an alarm" onClick={this.nextDay}>
-                                    <ArrowForwardIosIcon className={classes.flechaDerecha}/>
+                                    <ArrowForwardIosIcon className={classes.flechaDerecha} />
                                 </IconButton></div>
                         </div>
 

@@ -40,7 +40,6 @@
 #outlined-required{
   color:#76B900;
   width: 330px;
- 
 }
 #outlined-password-input{
   color: #76B900;
@@ -110,20 +109,6 @@ margin-left: 10px;
   margin-left: 10px;
   }
 
-  #HomeSchedule{
-    color: #B0E0E6;
-    font-family: Open Sans 'Roboto Light';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 27px;
-    letter-spacing: -1.5px;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    background : url(//client/src/imgs/in_app_logo_big.png); 
-    }
-
     #line {
       border: 1px solid;
       color: #696969;
@@ -137,18 +122,34 @@ margin-left: 10px;
       width: 40px;
     }
 
-    #ButtonMensa{
+    #instructions{
       color: #696969;
       font-family: Open Sans 'Roboto Light';
       font-style: normal;
       font-weight: normal;
-      font-size: 20px;
+      font-size: 15px;
       line-height: 27px;
-      letter-spacing: -1.5px;
+      letter-spacing: -0.4px;
       flex-direction: column;
       justify-content: center;
-      text-align: left;
+      text-align: center;
       margin-left: 10px;
+      margin-right: 10px;
       }
+
+      #emptyList{
+        color: #696969;
+        font-family: Open Sans 'Roboto Light';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: -0.4px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        }
 
     
