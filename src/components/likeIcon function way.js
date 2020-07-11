@@ -3,12 +3,9 @@ import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutline
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import useStyle from './UseStyles';
-<<<<<<< HEAD
 import Thedata from './FetchDataGericht'
-
-=======
 import Thedata from './FetchData';
->>>>>>> 81bb229351245fb88fdb9ba0a5661f8b6aa54d36
+
 
 
 
