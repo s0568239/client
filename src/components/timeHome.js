@@ -10,8 +10,6 @@ import { withStyles } from '@material-ui/core/styles';
 import LikeIcon from './likeIcon function way';
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 
-
-
 function FormatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
@@ -54,7 +52,12 @@ const useStyles = theme => ({
 
     flechaDerecha: {
 
-    }
+    },
+
+    Icon: {
+        color: 'gray',
+        fontSize: '40px'
+    },
 });
 
 
@@ -210,28 +213,29 @@ class TimeHome extends Component {
     EssenFoods() {
         const essen2 = this.state.essen;
         const { classes } = this.props;
+
         var foods = [];
         if (essen2) {
             for (var i in essen2) {
                 foods.push(
                     <Card className={classes.root}>
                         <CardContent>
-                            <Typography color="secondary" variant="h5" component="h2">
+                            <p id='cardsMain'>
                                 {essen2[i].name}
-                            </Typography>
-                            <Typography component="h2" color="textSecondary">
+                            </p>
+                            <p id='cardsNotizen'>
                                 {essen2[i].notes + ' '}
-                            </Typography>
-                            <h5>Preis</h5>
-                            <Typography component="h2" color="textSecondary">
-                                <label>Student: </label>{essen2[i].prices.students + '€'}
-                            </Typography>
-                            <Typography component="h2" color="textSecondary">
-                                <label>Mitarbeiter: </label>{essen2[i].prices.employees + '€'}
-                            </Typography>
-                            <Typography component="h2" color="textSecondary">
-                                <label>Andere: </label>{essen2[i].prices.others + '€'}
-                            </Typography>
+                            </p>
+                            <h4 id ='cardsSubtitel'>Preise</h4>
+                            <p id='cardsGerichte'>
+                                <label id = 'cardsGerichte'>Student: </label>{essen2[i].prices.students + '€'}
+                            </p>
+                            <p id='cardsGerichte'>
+                                <label id = 'cardsGerichte'>Mitarbeiter: </label>{essen2[i].prices.employees + '€'}
+                            </p>
+                            <p id='cardsGerichte'>
+                                <label id = 'cardsGerichte'>Andere: </label>{essen2[i].prices.others + '€'}
+                            </p>
                         </CardContent>
                         <CardActions>
                             <LikeIcon g={essen2[i]} />
@@ -244,7 +248,7 @@ class TimeHome extends Component {
             return (
                 <div>
                     <p id='emptyList'>Heute gibt es kein Essen</p>
-                    <SentimentVeryDissatisfiedIcon/>
+                    <SentimentVeryDissatisfiedIcon className={classes.Icon} />
                 </div>
             )
 
@@ -263,7 +267,7 @@ class TimeHome extends Component {
                 <hr id='line'></hr>
                 {
                     (isEmpty2) ?
-                        <div > 
+                        <div >
                             <p>{this.state.date.date}</p>
                             <div >
                                 <IconButton color="secondary" aria-label="add an alarm" onClick={this.backDay}>

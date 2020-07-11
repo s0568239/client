@@ -3,15 +3,28 @@ import Thedata from './FetchGerichte';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
-import { red } from '@material-ui/core/colors';
-import useStyles from './UseStyles';
+import { makeStyles } from "@material-ui/core/styles";
+import useStyleIcon from './UseStyles';
+
+const useStylesCard = makeStyles({
+      rootCard: {
+        minWidth: 70,
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 20,
+        marginBottom: 10,
+        margin: 'auto',
+        position: "left",
+        backgroundColor: '#DCDCDC'
+    }
+  });
 
 export default function Gerichte() {
-    const IconClass = useStyles()
+    const CardClass = useStylesCard()
+    const IconClass = useStyleIcon()
     //Löscht Lieblingsgericht
     const deleteGericht = async (g) => {
         //setisDelete(false)
@@ -33,24 +46,24 @@ export default function Gerichte() {
 
         for (var i in essen2) {
             cards.push(
-                <Card >
+                <Card className={CardClass.rootCard}>
                     <CardContent>
-                        <Typography color="secondary" variant="h5" component="h2">
+                        <p id='cardsMain'>
                             {essen2[i].name}
-                        </Typography>
-                        <Typography component="h2" color="textSecondary">
+                        </p>
+                        <p id='cardsNotizen'>
                             {essen2[i].notes + ' '}
-                        </Typography>
-                        <h5>Preis</h5>
-                        <Typography component="h2" color="textSecondary">
-                            <label>Student: </label>{essen2[i].prices.students + '€'}
-                        </Typography>
-                        <Typography component="h2" color="textSecondary">
-                            <label>Mitarbeiter: </label>{essen2[i].prices.employees + '€'}
-                        </Typography>
-                        <Typography component="h2" color="textSecondary">
-                            <label>Andere: </label>{essen2[i].prices.others + '€'}
-                        </Typography>
+                        </p>
+                        <h4 id='cardsSubtitel'>Preise</h4>
+                        <p id='cardsGerichte'>
+                            <label id='cardsGerichte'>Student: </label>{essen2[i].prices.students + '€'}
+                        </p>
+                        <p id='cardsGerichte'>
+                            <label id='cardsGerichte'>Mitarbeiter: </label>{essen2[i].prices.employees + '€'}
+                        </p>
+                        <p id='cardsGerichte'>
+                            <label id='cardsGerichte'>Andere: </label>{essen2[i].prices.others + '€'}
+                        </p>
                     </CardContent>
                     <CardActions>
                         <IconButton color="secondary" aria-label="add an alarm" onClick={() => { deleteGericht(essen2[i]); window.location.reload() }}>
@@ -67,10 +80,11 @@ export default function Gerichte() {
         return (
             <div>
                 <p id='instructions'>Hier findest du deine Lieblingsgerichte. Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
+                <h2 id='HomeTitle2'>Meine Gerichte</h2>
                 <hr id='line' />
                 <div>
-                    <p id = 'emptyList'>Die Liste ist leer, gehe ins Menü und wähle deine Lieblingsgerichte aus!</p>
-                    <FastfoodIcon className = {IconClass.Icon} />
+                    <p id='emptyList'>Die Liste ist leer, gehe ins Menü und wähle deine Lieblingsgerichte aus!</p>
+                    <FastfoodIcon className={IconClass.Icon} />
                 </div>
             </div>
         )
@@ -79,6 +93,7 @@ export default function Gerichte() {
         return (
             <div>
                 <p id='instructions'>Hier findest du deine Lieblingsgerichte. Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
+                <h2 id='HomeTitle2'>Meine Gerichte</h2>
                 <hr id='line' />
                 {cards}
             </div>

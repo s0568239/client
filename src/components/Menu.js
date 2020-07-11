@@ -36,6 +36,14 @@ const mytheme = createMuiTheme({
     },
   },
 
+  typography: {
+    fontFamily: `"Open Sans" Roboto Light`,
+    "fontSize": 14,
+    "fontWeightLight": 300,
+    "fontWeightRegular": 400,
+    "fontWeightMedium": 500
+   },
+
   overrides: {
     // Style sheet name ⚛️
     MuiIconButton: {
@@ -132,7 +140,7 @@ export default function SimpleMenu() {
               </Route>
 
                         <Route exact path="/mensa">
-                          Hilfe
+                          Meine Mensa
               </Route>
                         <Route exact path="/lovefood">
                           Meine Gerichte
