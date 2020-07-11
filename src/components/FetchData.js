@@ -3,16 +3,18 @@ import {useState, useEffect} from 'react'
 const Thedata = (url) => {
     const [readyLiebling, setreadyLiebling] = useState([]);
     useEffect(() => {
-        const loadData = async () => {
+        const loadData = async (url) => {
             const response = await fetch(url)
+            
             const data = await response.json()
-            //console.log(data)
-            setreadyLiebling(data)
-            //console.log(this.state.readyLiebling[2].id + " testing")
+            
+            setreadyLiebling(data[0])
+            
         };
         loadData(url)
 
-    }, []);
+    }, [url]);
+    
     return readyLiebling
 }
 export default Thedata

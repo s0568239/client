@@ -10,7 +10,8 @@ import Thedata from './FetchData'
 function NearMensa() {
     const [isLike, setIsLike] = useState(false)
     const t = Localitation()
-    const myMensa = Thedata('mymensa')
+    const myMensa = Thedata('/mymensa')
+    
 
     const onCli = () => {
         setIsLike(!isLike)
@@ -32,24 +33,7 @@ function NearMensa() {
             .then(response => response.json())
             .then(data => console.log(data));
     }
-    if (!myMensa.id == t[0].id) {
-        return (
-            <div>
-                <Card>
-                    <CardContent>
-                        <h4>{t[0].name}</h4>
-                        <h4>{t[0].address}</h4>
-                        <h4>{t[1]} Kilometer</h4>
-                    </CardContent>
-                    <CardActions>
-                        <IconButton onClick={() => { onCli() }}>
-                            <FavoriteBorderIcon />
-                        </IconButton>
-                    </CardActions>
-                </Card>
-
-            </div>)
-    } else {
+    if (myMensa.name == t[0].name) {
         return (
             <div>
                 <Card>
@@ -66,6 +50,24 @@ function NearMensa() {
                 </Card>
 
             </div>
+           )
+    } else {
+        return (
+            <div>
+            <Card>
+                <CardContent>
+                    <h4>{t[0].name}</h4>
+                    <h4>{t[0].address}</h4>
+                    <h4>{t[1]} Kilometer</h4>
+                </CardContent>
+                <CardActions>
+                    <IconButton onClick={() => { onCli() }}>
+                        <FavoriteBorderIcon />
+                    </IconButton>
+                </CardActions>
+            </Card>
+
+        </div>
         
         );
     }
