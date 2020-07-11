@@ -8,8 +8,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HomeIcon from '@material-ui/icons/Home';
-import HowToRegIcon from '@material-ui/icons/HowToReg';
-import HelpIcon from '@material-ui/icons/Help';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar'
 import TextField from '@material-ui/core/TextField'

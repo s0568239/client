@@ -50,7 +50,7 @@ export default function Gerichte() {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <IconButton color="secondary" aria-label="add an alarm">
+                        <IconButton color="secondary" aria-label="add an alarm" onClick={() =>{deleteGericht(essen2[i]); window.location.reload()}}>
                             <CloseIcon/>
                         </IconButton>
                     </CardActions>

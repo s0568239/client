@@ -71,6 +71,7 @@ class MeineMensa extends React.Component {
 
     alertF = () => {
         this.postrequest()
+        alert("Deine lisblingsmensa wurde geändert!")
         window.location.reload(false);
     }
 
