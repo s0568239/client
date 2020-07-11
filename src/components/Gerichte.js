@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Thedata from './FetchGerichte';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -22,6 +22,7 @@ export default function Gerichte() {
         };
         const response = await fetch('/mygericht/' + tg.id, requestOptions);
         const data = await response.json();
+        console.log(data)
     }
 
     const essen2 = Thedata()
