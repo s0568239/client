@@ -1,5 +1,5 @@
 import React from 'react';
-import Thedata from './FetchGerichte';
+import Thedata from './FetchData';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -27,7 +27,7 @@ export default function Gerichte() {
         console.log(data)
     }
 
-    const essen2 = Thedata()
+    const essen2 = Thedata('/mygericht/')
     var cards = []
     if (essen2 != null) {
 

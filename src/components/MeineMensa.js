@@ -1,6 +1,7 @@
 import React from "react";
 import MensaSelect from './SelectMensa';
 import Button from '@material-ui/core/Button';
+import MensaPosition from './nearMensa';
 
 class MeineMensa extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class MeineMensa extends React.Component {
 
 
     //https://www.robinwieruch.de/react-fetching-data
-    async componentWillMount() {
+    async componentDidMount() {
         this.setState({ isLoaded: true })
 
         const response = await fetch('/mensen');
@@ -32,16 +33,6 @@ class MeineMensa extends React.Component {
     selecting = (event) => {
         this.setState({ mensaName: event.target.value })
     }
-
-    /* postrequest = () => fetch('/mymensa', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(this.getData())
-        
-    }) */
 
     postrequest() {
         // Simple POST request with a JSON body using fetch
@@ -84,6 +75,9 @@ class MeineMensa extends React.Component {
                         <h2 id='HomeTitle2'>Aktuelle Lieblingsmensa</h2>
                         <hr id='line'></hr>
                         <p id='HomeTitle1'>{liebling.name}</p>
+                        <div>
+                            <MensaPosition/>
+                        </div>
                         <h2 id='HomeTitle2'>Mensa auswählen</h2>
                         <hr id='line'></hr>
                     </div>
