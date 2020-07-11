@@ -5,7 +5,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import LikeIcon from './likeIcon function way';
@@ -33,11 +32,6 @@ function isEmpty(date) {
     } else {
         return true
     }
-}
-
-function todayData(dateNow) {
-    var dateNow = new Date(dateNow)
-    return dateNow
 }
 
 const useStyles = theme => ({
@@ -262,9 +256,6 @@ class TimeHome extends Component {
 
     render() {
         const isEmpty2 = isEmpty(this.state.date)
-        const days = ["Mon", "Di", "Mi", "Do", "Fr", "Sa", "So"]
-        var day = NaN
-        var dayN = NaN
         const { classes } = this.props;
         return (
             <div>
@@ -272,10 +263,7 @@ class TimeHome extends Component {
                 <hr id='line'></hr>
                 {
                     (isEmpty2) ?
-                        <div > {
-                            day = new Date(this.state.date.date),
-                            dayN = days[day.getDay() - 1]
-                        }
+                        <div > 
                             <p>{this.state.date.date}</p>
                             <div >
                                 <IconButton color="secondary" aria-label="add an alarm" onClick={this.backDay}>

@@ -1,7 +1,6 @@
 import React from "react";
 import MensaSelect from './SelectMensa';
 import Button from '@material-ui/core/Button';
-import {positions} from '@material-ui/system';
 
 class MeineMensa extends React.Component {
     constructor(props) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import IconButton from '@material-ui/core/IconButton';
@@ -24,6 +24,7 @@ export default function LikeIcon(props) {
         };
         const response = await fetch('/mygericht', requestOptions);
         const data = await response.json();
+        console.log(data)
 
     }
 
@@ -39,15 +40,16 @@ export default function LikeIcon(props) {
         };
         const response = await fetch('/mygericht/' + tg.id, requestOptions);
         const data = await response.json();
+        console.log(data)
     }
 
     const isLiebling = () => {
         var bool = [];
-        var bool2 = []
+
         for (var i in meineGerichte) {
 
             //console.log(meineGerichte[1].id + " mm")
-            if (g.id == meineGerichte[i].id) {
+            if (g.id === meineGerichte[i].id) {
                 
                 bool.push(<FavoriteOutlinedIcon />);
 
