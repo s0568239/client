@@ -61,6 +61,9 @@ const useStyles = theme => ({
         color: 'gray',
         fontSize: '40px'
     },
+    likeButton:{
+        flexDirection: 'row-reverse'
+    }
 });
 
 
@@ -236,24 +239,20 @@ class TimeHome extends Component {
 
                     <Card className={classes.root}>
                         <CardContent>
-                            <p id='cardsMain'>
-                                {essen2[i].name}
-                            </p>
-                            <p id='cardsNotizen'>
-                                {essen2[i].notes + ' '}
-                            </p>
-                            <h4 id='cardsSubtitel'>Preise</h4>
-                            <p id='cardsGerichte'>
-                                <label id='cardsGerichte'>Student: </label>{essen2[i].prices.students + '€'}
-                            </p>
-                            <p id='cardsGerichte'>
-                                <label id='cardsGerichte'>Mitarbeiter: </label>{essen2[i].prices.employees + '€'}
-                            </p>
-                            <p id='cardsGerichte'>
-                                <label id='cardsGerichte'>Andere: </label>{essen2[i].prices.others + '€'}
-                            </p>
+
+                        <p id='cardsMain'>
+                            {essen2[i].name}
+                        </p>
+                        <p id='cardsNotizen'>
+                        ANMERKUNGEN: {essen2[i].notes + ' '}
+                        </p>
+                        <h4 id='cardsSubtitel'>Preise</h4>
+                        <p id='cardsGerichte'>
+                            Student: {essen2[i].prices.students + ' € / '} Mitarbeiter: {essen2[i].prices.employees + ' € / '} 
+                            Andere: {essen2[i].prices.others + ' €'}
+                        </p>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className={classes.likeButton}>
                             <LikeIcon g={essen2[i]} />
                         </CardActions>
                     </Card>

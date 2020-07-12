@@ -21,6 +21,9 @@ const locationCard = makeStyles({
       position: "left",
       backgroundColor: '#FFFFFF',
       boxShadow: 3
+  },
+  likeButton:{
+      flexDirection: 'row-reverse',
   }
 });
 
@@ -57,14 +60,14 @@ function NearMensa() {
             <div>
                 <Card className = {CardClass.loCard}>
                     <CardContent>
-                        <h4 id='MeineMensaSubtitel'>Mensa Name:</h4>
+                        <h4 id='MeineMensaSubtitel'>Mensa:</h4>
                         <p id='cardsMensen'>{t[0].name}</p>
                         <h4 id='MeineMensaSubtitel'>Adresse:</h4>
                         <p id='cardsMensen'>{t[0].address}</p>
-                        <h4 id='MeineMensaSubtitel'>Distanz:</h4>
+                        <h4 id='MeineMensaSubtitel'>Entfernung:</h4>
                         <p id='cardsMensen'>{t[1]} Kilometer</p>
                     </CardContent>
-                    <CardActions>
+                    <CardActions className={CardClass.likeButton}>
                         <IconButton>
                             <FavoriteIcon   className={lieblingsMensa.HerzIcon}/>
                         </IconButton>
@@ -78,14 +81,14 @@ function NearMensa() {
             <div>
             <Card className = {CardClass.loCard}>
                 <CardContent>
-                        <h4 id='MeineMensaSubtitel'>Mensa Name:</h4>
+                        <h4 id='MeineMensaSubtitel'>Mensa:</h4>
                         <p id='cardsMensen'>{t[0].name}</p>
                         <h4 id='MeineMensaSubtitel'>Adresse:</h4>
                         <p id='cardsMensen'>{t[0].address}</p>
-                        <h4 id='MeineMensaSubtitel'>Distanz:</h4>
+                        <h4 id='MeineMensaSubtitel'>Entfernung:</h4>
                         <p id='cardsMensen'>{t[1]} Kilometer</p>
                 </CardContent>
-                <CardActions>
+                <CardActions className={CardClass.likeButton}>
                     <IconButton onClick={() => { onCli() }}>
                         <FavoriteBorderIcon className={lieblingsMensa.HerzIcon}/>
                     </IconButton>
