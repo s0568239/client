@@ -5,7 +5,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import LikeIcon from './likeIcon function way';
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
@@ -157,6 +156,7 @@ class TimeHome extends Component {
                 for (var i in essen) {
                     for (var j in data) {
                         if (data[j].name == essen[i].name && Notification.permission === "granted") {
+                            
                             NotificationManager.info('Heute gibt es ' + essen[i].name);
                         }
 
@@ -222,7 +222,22 @@ class TimeHome extends Component {
                 console.log('Request failed test', error)
             })
 
-        fetchingGerichte.then(essen => this.setState({ essen }));
+        fetchingGerichte.then(essen => this.setState({ essen }))
+        .then(async() => {
+            const response = await fetch('/mygericht')
+            const data = await response.json()
+            const essen = this.state.essen
+            for (var i in essen) {
+                for (var j in data) {
+                    if (data[j].name == essen[i].name && Notification.permission === "granted") {
+                        NotificationManager.info('Heute gibt es ' + essen[i].name);
+                    }
+
+                }
+            }
+
+        }
+        );
 
 
 

@@ -8,20 +8,34 @@ class Notifications extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            status: false
+            status: localStorage.getItem('status')
         };
         this.nextDay = this.handleChange.bind(this);
     }
 
+    componentDidMount(){
+        if(Notification.permission !== "granted"){
+            localStorage.removeItem('status')
+            
+        }else{
+            localStorage.getItem('status', true)
+            this.setState({status: true})
+        }
+    }
+
     handleChange = () => {
-        this.setState({ status: !this.state.status });
-        if (!this.state.status) {
+        this.setState({status: true})
+        
+        if (Notification.permission === 'default') {
+            
             if (!("Notification" in window)) {
                 alert("This browser does not support desktop notification");
-              }
+            }
+
             Notification.requestPermission().then(function (p) {
                 if (p === 'granted') {
                     NotificationManager.info('Notification wurde activiert');
+                    
                 } else {
                     console.log('User blocked notifications.');
                 }
@@ -31,8 +45,9 @@ class Notifications extends React.Component {
 
         }
     }
-    
+
     render() {
+
         return (
             <div>
                 <h2 id='HomeTitle2'>Benachrichtigungen verwalten</h2>

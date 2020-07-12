@@ -1,6 +1,5 @@
 import MensaSelect from './SelectMensa';
 import React from 'react';
-import UseDataFetch from './FetchMensa'
 import { Card, CardContent } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -44,7 +43,7 @@ class MensenSicht extends React.Component {
 
     render() {
         const { classes } = this.props;
-        if (this.state.mensaName != "") {
+        if (this.state.mensaName !== "") {
             return (
                 <div>
                     <p id='instructions'>Hier findest du die Namen und Adressen aller Mensen in Deutschland.</p>

@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import MenuIcon from '@material-ui/icons/Menu';
 import List from "@material-ui/core/List";
@@ -8,16 +7,13 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HomeIcon from '@material-ui/icons/Home';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar'
-import TextField from '@material-ui/core/TextField'
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import { Grid } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import MensaSelect from './SelectMensa';
 import MeineMensa from './MeineMensa';
 import MyHome from './Home';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
@@ -27,7 +23,7 @@ import useStyles from './UseStyles';
 import EmojiFoodBeverageIcon from '@material-ui/icons/EmojiFoodBeverage';
 import MensenSicht from './mensenSicht';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
-import Notification from './notification'
+import Notification from './notification';
 
 
 const mytheme = createMuiTheme({

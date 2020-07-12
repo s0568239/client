@@ -11,3 +11,242 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+#outlined-required {
+  color: #76B900;
+  width: 330px;
+}
+
+#outlined-password-input {
+  color: #76B900;
+  width: 330px;
+}
+
+#mensawissen {
+  color: #76B900;
+  font-style: normal;
+  font-size: 22px;
+  text-align: center;
+}
+
+button.MuiButton-containedSecondary {
+  background-color: #76B900;
+  color: #ffffff;
+}
+
+button.MuiButton-root {
+  padding: 6px 16px;
+  font-size: 0.975rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: Open Sans 'Roboto Light';
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: capitalize;
+  border-radius: 8;
+  margin: 2em;
+  background-color: #76B900;
+  color: #ffffff;
+  width: 8em;
+}
+
+.MuiTypography-root {
+  color: #76B900;
+}
+
+#HomeTitle1 {
+  color: #000000;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -1.5px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-left: 10px;
+}
+
+#HomeTitle2 {
+  color: #696969;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 10px;
+  letter-spacing: -1.0px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+#line {
+  line-height: normal;
+  color: #696969;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+img {
+  position: absolute;
+  text-align: right;
+  width: 40px;
+}
+
+#instructions {
+  color: #696969;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.4px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#emptyList {
+  color: #696969;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: -0.4px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#cardsMain {
+  color: #76B900;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.5px;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 1px;
+}
+
+#cardsSubtitel {
+  color: #000000;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 17px;
+  letter-spacing: -0.5px;
+  flex-direction: column;
+  text-align: left;
+}
+
+#cardsNotizen {
+  color: #000000;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0px;
+  flex-direction: column;
+  text-align: left;
+}
+
+#cardsGerichte {
+  color: #000000;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0px;
+  flex-direction: column;
+  text-align: left;
+}
+
+#cardsMensen {
+  color: #000000;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0px;
+  flex-direction: column;
+  text-align: left;
+}
+
+body{
+  background-color: #F5F5F5;
+}
+
+#MeineMensaSubtitel {
+  color: #000000;
+  font-family: Open Sans 'Roboto Light';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 10px;
+  letter-spacing: -0.5px;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 1px;
+}
+
+#smallLabel {
+  color: #000000;
+  font-size: 10;
+}
+
