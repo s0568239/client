@@ -2,8 +2,24 @@ import MensaSelect from './SelectMensa';
 import React from 'react';
 import UseDataFetch from './FetchMensa'
 import { Card, CardContent } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+
+const useStyles = theme => ({
+    root: {
+        minWidth: 70,
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 20,
+        marginBottom: 10,
+        margin: 'auto',
+        position: "left",
+        backgroundColor: '#FFFFFF',
+        boxShadow: 3
+    }
+});
 
 class MensenSicht extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -27,17 +43,18 @@ class MensenSicht extends React.Component {
     }
 
     render() {
+        const { classes } = this.props;
         if (this.state.mensaName != "") {
             return (
                 <div>
-                    <p id='instructions'>Hier findest du eine Übersicht alle Mensen in Deutschland.</p>
-                    <h2 id='HomeTitle2'>Meine Gerichte</h2>
+                    <p id='instructions'>Hier findest du die Namen und Adressen aller Mensen in Deutschland.</p>
+                    <h2 id='HomeTitle2'>Mensa-Auswahl</h2>
                     <hr id='line' />
                     <MensaSelect value={this.state.mensaName} select={this.selecting} />
-                    <Card>
+                    <Card className={classes.root}>
                         <CardContent>
-                            <h4>{this.state.data.name}</h4>
-                            <p>{this.state.data.address}</p>
+                            <h4 id='MeineMensaSubtitel'>{this.state.data.name}</h4>
+                            <p id='cardsMensen'>{this.state.data.address}</p>
                         </CardContent>
                     </Card>
                 </div>
@@ -45,8 +62,8 @@ class MensenSicht extends React.Component {
         } else {
             return (
                 <div>
-                    <p id='instructions'>Hier findest du eine Übersicht alle Mensen in Deutschland.</p>
-                    <h2 id='HomeTitle2'>Meine Gerichte</h2>
+                    <p id='instructions'>Hier findest du die Namen und Adressen aller Mensen in Deutschland.</p>
+                    <h2 id='HomeTitle2'>Mensa-Auswahl</h2>
                     <hr id='line' />
                     <MensaSelect value={this.state.mensaName} select={this.selecting} />
                 </div>
@@ -55,4 +72,4 @@ class MensenSicht extends React.Component {
 
     }
 }
-export default MensenSicht
+export default withStyles(useStyles)(MensenSicht) 

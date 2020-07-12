@@ -119,7 +119,7 @@ export default function SimpleMenu() {
           <ListItem>
             <ListItemIcon><EmojiFoodBeverageIcon /></ListItemIcon>
             <ListItemText>
-              Mensen Übersicht
+              Mensa-Übersicht
             </ListItemText>
           </ListItem>
         </Link>
@@ -127,7 +127,7 @@ export default function SimpleMenu() {
           <ListItem>
             <ListItemIcon><NotificationsActiveIcon /></ListItemIcon>
             <ListItemText>
-              Notification
+              Benachrichtigungen
             </ListItemText>
           </ListItem>
         </Link>
@@ -165,10 +165,10 @@ export default function SimpleMenu() {
                           Meine Gerichte
               </Route>
                         <Route exact path="/mensensearch">
-                          Mensen Übersicht
+                          Mensa-Übersicht
               </Route>
                         <Route exact path="/notification">
-                          Notification
+                        Benachrichtigungen
               </Route>
                       </Switch>
 

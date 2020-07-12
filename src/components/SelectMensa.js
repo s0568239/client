@@ -9,7 +9,8 @@ const styles = theme => ({
     root: {
         minWidth: 120,
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
+        marginBottom: 10
     },
   });
 
@@ -23,7 +24,7 @@ class MensaSelect extends React.Component {
         return (
             <div>
                 <FormControl className={classes.root} >
-                    <InputLabel htmlFor="age-native-required">Mensa auswählen</InputLabel>
+                    <InputLabel id='smallLabel' htmlFor="age-native-required">Wähle eine Mensa aus</InputLabel>
                     <Select
                         native
                         value={this.props.value}

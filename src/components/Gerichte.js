@@ -53,17 +53,12 @@ export default function Gerichte() {
                             {essen2[i].name}
                         </p>
                         <p id='cardsNotizen'>
-                            {essen2[i].notes + ' '}
+                        ANMERKUNGEN: {essen2[i].notes + ' '}
                         </p>
                         <h4 id='cardsSubtitel'>Preise</h4>
                         <p id='cardsGerichte'>
-                            <label id='cardsGerichte'>Student: </label>{essen2[i].prices.students + '€'}
-                        </p>
-                        <p id='cardsGerichte'>
-                            <label id='cardsGerichte'>Mitarbeiter: </label>{essen2[i].prices.employees + '€'}
-                        </p>
-                        <p id='cardsGerichte'>
-                            <label id='cardsGerichte'>Andere: </label>{essen2[i].prices.others + '€'}
+                            Student: {essen2[i].prices.students + ' € / '} Mitarbeiter: {essen2[i].prices.employees + ' € / '} 
+                            Andere: {essen2[i].prices.others + ' €'}
                         </p>
                     </CardContent>
                     <CardActions>
@@ -80,8 +75,7 @@ export default function Gerichte() {
 
         return (
             <div>
-                <p id='instructions'>Hier findest du deine Lieblingsgerichte.</p>
-                <p id='instructions'>Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
+                <p id='instructions'>Hier findest du deine Lieblingsgerichte. Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
                 <h2 id='HomeTitle2'>Meine Gerichte</h2>
                 <hr id='line' />
                 <div>
@@ -94,8 +88,7 @@ export default function Gerichte() {
     } else {
         return (
             <div>
-                <p id='instructions'>Hier findest du deine Lieblingsgerichte.</p>
-                <p id='instructions'>Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
+                <p id='instructions'>Hier findest du deine Lieblingsgerichte. Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
                 <h2 id='HomeTitle2'>Meine Gerichte</h2>
                 <hr id='line' />
                 {cards}
