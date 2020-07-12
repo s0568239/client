@@ -33,7 +33,7 @@ const mytheme = createMuiTheme({
     },
     secondary: {
       main: '#76B900',
-    },
+    }
   },
 
   typography: {

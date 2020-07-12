@@ -7,9 +7,9 @@ const useStylesIcon = makeStyles({
     fontSize: '40px'
   },
   HerzIcon: {
-    color: 'blue',
+    color: '#76B900',
     fontSize: '40px',
-    right: '20px'
+    position: 'relative'
   },
   FormControl: {
     minWidth: 12000
@@ -37,7 +37,8 @@ const useStylesIcon = makeStyles({
       marginBottom: 10,
       margin: 'auto',
       position: "left",
-      backgroundColor: '#DCDCDC'
+      backgroundColor: '#FFFFFF',
+      boxShadow: 3
   }
   }
 });

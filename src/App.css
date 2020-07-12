@@ -102,16 +102,17 @@ button.MuiButton-root {
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 27px;
-    letter-spacing: -1.5px;
+    line-height: 10px;
+    letter-spacing: -1.0px;
     flex-direction: column;
     justify-content: center;
     text-align: left;
     margin-left: 10px;
+    margin-top: 30px;
 }
 
 #line {
-    border: 1px solid;
+    line-height: normal;
     color: #696969;
     margin-left: 10px;
     margin-right: 10px;
@@ -129,7 +130,7 @@ img {
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
-    line-height: 27px;
+    line-height: 10px;
     letter-spacing: -0.4px;
     flex-direction: column;
     justify-content: center;
@@ -170,7 +171,7 @@ img {
     font-family: Open Sans 'Roboto Light';
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 17px;
     letter-spacing: -0.5px;
     flex-direction: column;
@@ -199,4 +200,32 @@ img {
     letter-spacing: 0px;
     flex-direction: column;
     justify-content: center;
+}
+
+#cardsMensen {
+    color: #000000;
+    font-family: Open Sans 'Roboto Light';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0px;
+    flex-direction: column;
+    text-align: left;
+}
+
+body{
+    background-color: #F5F5F5;
+}
+
+#MeineMensaSubtitel {
+    color: #000000;
+    font-family: Open Sans 'Roboto Light';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 17px;
+    letter-spacing: -0.5px;
+    flex-direction: column;
+    text-align: left;
 }

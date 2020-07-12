@@ -41,7 +41,8 @@ const useStyles = theme => ({
         marginBottom: 10,
         margin: 'auto',
         position: "left",
-        backgroundColor: '#DCDCDC'
+        backgroundColor: '#FFFFFF',
+        boxShadow: 3
     },
     title: {
         fontSize: 200,

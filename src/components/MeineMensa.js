@@ -76,6 +76,8 @@ class MeineMensa extends React.Component {
                         <hr id='line'></hr>
                         <p id='HomeTitle1'>{liebling.name}</p>
                         <div>
+                            <h2 id='HomeTitle2'>In deiner Nähe</h2>
+                            <hr id='line'></hr>
                             <MensaPosition/>
                         </div>
                         <h2 id='HomeTitle2'>Mensa auswählen</h2>

@@ -3,8 +3,7 @@ import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutline
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import useStyle from './UseStyles';
-import Thedata from './FetchDataGericht'
-import Thedata from './FetchData';
+import Thedata from './FetchDataGericht';
 
 
 

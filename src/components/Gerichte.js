@@ -10,17 +10,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import useStyleIcon from './UseStyles';
 
 const useStylesCard = makeStyles({
-      rootCard: {
-        minWidth: 70,
-        marginLeft: 10,
-        marginRight: 10,
-        marginTop: 20,
-        marginBottom: 10,
-        margin: 'auto',
-        position: "left",
-        backgroundColor: '#DCDCDC'
-    }
-  });
+    rootCard: {
+      minWidth: 70,
+      marginLeft: 10,
+      marginRight: 10,
+      marginTop: 20,
+      marginBottom: 10,
+      margin: 'auto',
+      position: "left",
+      backgroundColor: '#FFFFFF',
+      boxShadow: 3
+  }
+});
 
 export default function Gerichte() {
     const CardClass = useStylesCard()
@@ -79,7 +80,8 @@ export default function Gerichte() {
 
         return (
             <div>
-                <p id='instructions'>Hier findest du deine Lieblingsgerichte. Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
+                <p id='instructions'>Hier findest du deine Lieblingsgerichte.</p>
+                <p id='instructions'>Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
                 <h2 id='HomeTitle2'>Meine Gerichte</h2>
                 <hr id='line' />
                 <div>
@@ -92,7 +94,8 @@ export default function Gerichte() {
     } else {
         return (
             <div>
-                <p id='instructions'>Hier findest du deine Lieblingsgerichte. Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
+                <p id='instructions'>Hier findest du deine Lieblingsgerichte.</p>
+                <p id='instructions'>Du kannst  jederzeit neue hinzufügen oder entfernen.</p>
                 <h2 id='HomeTitle2'>Meine Gerichte</h2>
                 <hr id='line' />
                 {cards}
