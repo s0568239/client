@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import LikeIcon from './likeIcon function way';
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 function FormatDate(date) {
     var d = new Date(date),
@@ -92,7 +94,7 @@ class TimeHome extends Component {
         this.componentWillMount()
 
     }
-
+    
     componentDidMount() {
         this.setState({ value: this.state.value + 1 });
         var i = this.state.value
@@ -135,7 +137,6 @@ class TimeHome extends Component {
             canteen_id = data[0].id;
 
             var urli = 'https://openmensa.org/api/v2/canteens/' + canteen_id + '/days/' + day_date + '/meals'
-            console.log(urli)
             return fetch(urli); // make a 2nd request and return a promise
         })
             .then(function (response) {
@@ -147,10 +148,23 @@ class TimeHome extends Component {
                 console.log('Request failed test', error)
             })
 
-        fetchingGerichte.then(essen => this.setState({ essen }));
+        
+        fetchingGerichte.then(essen => this.setState({ essen }))
+            .then(async() => {
+                const response = await fetch('/mygericht')
+                const data = await response.json()
+                const essen = this.state.essen
+                for (var i in essen) {
+                    for (var j in data) {
+                        if (data[j].name == essen[i].name && Notification.permission === "granted") {
+                            NotificationManager.info('Heute gibt es ' + essen[i].name);
+                        }
 
+                    }
+                }
 
-
+            }
+            );
     }
 
     componentWillMount() {
@@ -222,9 +236,10 @@ class TimeHome extends Component {
         if (essen2) {
             for (var i in essen2) {
                 foods.push(
-                    
+
                     <Card className={classes.root}>
                         <CardContent>
+
                         <p id='cardsMain'>
                             {essen2[i].name}
                         </p>
@@ -288,6 +303,7 @@ class TimeHome extends Component {
                 }<h2 id='HomeTitle2'>Gerichte</h2>
                 <hr id='line'></hr>
                 {this.EssenFoods()}
+                <NotificationContainer />
             </div>
 
 
