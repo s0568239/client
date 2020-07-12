@@ -20,6 +20,9 @@ const useStylesCard = makeStyles({
       position: "left",
       backgroundColor: '#FFFFFF',
       boxShadow: 3
+  },
+  deleteButton:{
+      flexDirection: 'row-reverse'
   }
 });
 
@@ -48,7 +51,13 @@ export default function Gerichte() {
         for (var i in essen2) {
             cards.push(
                 <Card className={CardClass.rootCard}>
+                     
                     <CardContent>
+                    <CardActions className={CardClass.deleteButton}>
+                        <IconButton color="secondary" aria-label="add an alarm" onClick={() => { deleteGericht(essen2[i]); window.location.reload() }}>
+                            <CloseIcon />
+                        </IconButton>
+                    </CardActions>
                         <p id='cardsMain'>
                             {essen2[i].name}
                         </p>
@@ -61,11 +70,7 @@ export default function Gerichte() {
                             Andere: {essen2[i].prices.others + ' €'}
                         </p>
                     </CardContent>
-                    <CardActions>
-                        <IconButton color="secondary" aria-label="add an alarm" onClick={() => { deleteGericht(essen2[i]); window.location.reload() }}>
-                            <CloseIcon />
-                        </IconButton>
-                    </CardActions>
+                   
                 </Card>
             );
         }

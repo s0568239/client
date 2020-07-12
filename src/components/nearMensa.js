@@ -7,6 +7,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import Thedata from './FetchMyMensa';
 import { makeStyles } from "@material-ui/core/styles";
 import useStyle from './UseStyles';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 
 
@@ -23,7 +24,11 @@ const locationCard = makeStyles({
       boxShadow: 3
   },
   likeButton:{
-      flexDirection: 'row-reverse',
+      flexDirection: 'row-reverse'
+  },
+  LocationIcon:{
+    color: '#696969',
+    fontSize: '15px'
   }
 });
 
@@ -60,12 +65,12 @@ function NearMensa() {
             <div>
                 <Card className = {CardClass.loCard}>
                     <CardContent>
-                        <h4 id='MeineMensaSubtitel'>Mensa:</h4>
+                        <p id='MeineMensaSubtitel'>Mensa:</p>
                         <p id='cardsMensen'>{t[0].name}</p>
-                        <h4 id='MeineMensaSubtitel'>Adresse:</h4>
+                        <p id='MeineMensaSubtitel'>Adresse:</p>
                         <p id='cardsMensen'>{t[0].address}</p>
-                        <h4 id='MeineMensaSubtitel'>Entfernung:</h4>
-                        <p id='cardsMensen'>{t[1]} Kilometer</p>
+                        <p id='MeineMensaSubtitel'>Entfernung:</p>
+                        <p id='cardsMensen'><LocationOnIcon className={CardClass.LocationIcon} /> {t[1]} Kilometer</p>
                     </CardContent>
                     <CardActions className={CardClass.likeButton}>
                         <IconButton>
@@ -81,12 +86,12 @@ function NearMensa() {
             <div>
             <Card className = {CardClass.loCard}>
                 <CardContent>
-                        <h4 id='MeineMensaSubtitel'>Mensa:</h4>
+                        <p id='MeineMensaSubtitel'>Mensa:</p>
                         <p id='cardsMensen'>{t[0].name}</p>
-                        <h4 id='MeineMensaSubtitel'>Adresse:</h4>
+                        <p id='MeineMensaSubtitel'>Adresse:</p>
                         <p id='cardsMensen'>{t[0].address}</p>
-                        <h4 id='MeineMensaSubtitel'>Entfernung:</h4>
-                        <p id='cardsMensen'>{t[1]} Kilometer</p>
+                        <p id='MeineMensaSubtitel'>Entfernung:</p>
+                        <p id='cardsMensen'><LocationOnIcon className={CardClass.LocationIcon} /> {t[1]} Kilometer</p>
                 </CardContent>
                 <CardActions className={CardClass.likeButton}>
                     <IconButton onClick={() => { onCli() }}>
