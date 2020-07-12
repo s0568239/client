@@ -15,7 +15,7 @@ const useStylesIcon = makeStyles({
     minWidth: 12000
   },
   list: {
-    width: 200
+    width: 250
   },
   fullList: {
     width: "auto"

@@ -23,7 +23,7 @@ class MensaSelect extends React.Component {
         return (
             <div>
                 <FormControl className={classes.root} >
-                    <InputLabel htmlFor="age-native-required">Lieblingsmensa auswählen</InputLabel>
+                    <InputLabel htmlFor="age-native-required">Mensa auswählen</InputLabel>
                     <Select
                         native
                         value={this.props.value}

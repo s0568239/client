@@ -8,7 +8,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HomeIcon from '@material-ui/icons/Home';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar'
 import TextField from '@material-ui/core/TextField'
 import Toolbar from '@material-ui/core/Toolbar';
@@ -24,6 +24,10 @@ import FastfoodIcon from '@material-ui/icons/Fastfood';
 import Gerichte from './Gerichte';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import useStyles from './UseStyles';
+import EmojiFoodBeverageIcon from '@material-ui/icons/EmojiFoodBeverage';
+import MensenSicht from './mensenSicht';
+import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
+import Notification from './notification'
 
 
 const mytheme = createMuiTheme({
@@ -42,7 +46,7 @@ const mytheme = createMuiTheme({
     "fontWeightLight": 300,
     "fontWeightRegular": 400,
     "fontWeightMedium": 500
-   },
+  },
 
   overrides: {
     // Style sheet name ⚛️
@@ -111,7 +115,22 @@ export default function SimpleMenu() {
             </ListItemText>
           </ListItem>
         </Link>
-
+        <Link to="/mensensearch" className={classes.link}>
+          <ListItem>
+            <ListItemIcon><EmojiFoodBeverageIcon /></ListItemIcon>
+            <ListItemText>
+              Mensen Übersicht
+            </ListItemText>
+          </ListItem>
+        </Link>
+        <Link to="/notification" className={classes.link}>
+          <ListItem>
+            <ListItemIcon><NotificationsActiveIcon /></ListItemIcon>
+            <ListItemText>
+              Notification
+            </ListItemText>
+          </ListItem>
+        </Link>
       </List>
 
     </div>
@@ -145,6 +164,12 @@ export default function SimpleMenu() {
                         <Route exact path="/lovefood">
                           Meine Gerichte
               </Route>
+                        <Route exact path="/mensensearch">
+                          Mensen Übersicht
+              </Route>
+                        <Route exact path="/notification">
+                          Notification
+              </Route>
                       </Switch>
 
                     </Typography>
@@ -173,34 +198,19 @@ export default function SimpleMenu() {
                     <Route exact path="/">
                       <MyHome />
                     </Route>
-                    <Route exact path="/test">
-                      <br />
-                      <h2 id='mensawissen'>DANKE, DASS SIE MENSA-WISSEN NUTZEN</h2>
-                      <br />
-                      <TextField
-                        required
-                        id="outlined-required"
-                        label="Benutzer neu"
-                        margin='normal'
-                      /><div /><br /><br />
-                      <TextField
-                        required
-                        id="outlined-password-input"
-                        type="password"
-                        label="Password neu"
-                        margin='normal'
-                      />
-                      <MensaSelect />
+                    <Route exact path="/mensensearch">
 
-                      <Button variant="contained">
-                        Bestätigen
-        	            </Button>
+                      <MensenSicht />
+
                     </Route>
                     <Route exact path="/mensa">
                       <MeineMensa />
                     </Route>
                     <Route exact path="/lovefood">
                       <Gerichte />
+                    </Route>
+                    <Route exact path="/notification">
+                      <Notification />
                     </Route>
                   </Switch></div>
               </React.Fragment>
