@@ -2,60 +2,78 @@
 import React from 'react';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import Switch from '@material-ui/core/Switch';
 
-class Notification extends React.Component {
-    createNotification = (type) => {
-        return () => {
-            switch (type) {
-                case 'info':
-                    NotificationManager.info('Info message');
-                    break;
-                case 'success':
-                    NotificationManager.success('Success message', 'Title here');
-                    break;
-                case 'warning':
-                    NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
-                    break;
-                case 'error':
-                    NotificationManager.error('Error message', 'Click me!', 5000, () => {
-                        alert('callback');
-                    });
-                    break;
-            }
+class Notifications extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            status: false
         };
-    };
+        this.nextDay = this.handleChange.bind(this);
+    }
 
+    handleChange = () => {
+        this.setState({ status: !this.state.status });
+        if (!this.state.status) {
+            if (!("Notification" in window)) {
+                alert("This browser does not support desktop notification");
+              }
+            Notification.requestPermission().then(function (p) {
+                if (p === 'granted') {
+                    NotificationManager.info('Notification wurde activiert');
+                } else {
+                    console.log('User blocked notifications.');
+                }
+            }).catch(function (err) {
+                console.error(err);
+            });
+
+        }
+    }
+    
     render() {
         return (
             <div>
-            <h2 id='HomeTitle2'>Benachrichtigungen verwalten</h2>
-            <hr id='line' />
-            <h2></h2>
+                <h2 id='HomeTitle2'>Benachrichtigungen verwalten</h2>
+                <hr id='line' />
+                <div>
+                    <h2 id='HomeTitle2'>Lieblingsgericht</h2>
+                    <p>Du bekommst eine Benachrichtigung, wenn dein Lieblingsgericht angeboten wird</p>
+                    <Switch
+                        checked={this.state.status}
+                        onChange={this.handleChange}
+                        inputProps={{ 'aria-label': 'secondary checkbox' }}
+                    />
+                    <NotificationContainer />
+
+                </div>
+
             </div>
-      /* <div>
-        <button className='btn btn-info'
-          onClick={this.createNotification('info')}>Info
-        </button>
-        <hr/>
-        <button className='btn btn-success'
-          onClick={this.createNotification('success')}>Success
-        </button>
-        <hr/>
-        <button className='btn btn-warning'
-          onClick={this.createNotification('warning')}>Warning
-        </button>
-        <hr/>
-        <button className='btn btn-danger'
-          onClick={this.createNotification('error')}>Error
-        </button>
- 
-        <NotificationContainer/>
-      </div> */
-      
-      
-                
-    );
+            /* <div>
+              <button className='btn btn-info'
+                onClick={this.createNotification('info')}>Info
+              </button>
+              <hr/>
+              <button className='btn btn-success'
+                onClick={this.createNotification('success')}>Success
+              </button>
+              <hr/>
+              <button className='btn btn-warning'
+                onClick={this.createNotification('warning')}>Warning
+              </button>
+              <hr/>
+              <button className='btn btn-danger'
+                onClick={this.createNotification('error')}>Error
+              </button>
+       
+              <NotificationContainer/>
+            </div> */
+
+
+
+        );
     }
 }
 
-export default Notification;
+export default Notifications;
