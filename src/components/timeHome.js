@@ -298,26 +298,20 @@ class TimeHome extends Component {
                 {
                     (isEmpty2) ?
                         <div >
-                            <p>{this.state.date.date}</p>
-                            <div >
-                                <IconButton color="secondary" aria-label="add an alarm" onClick={this.backDay}>
+                            <p id='HomeDate'><IconButton color="secondary" aria-label="add an alarm" onClick={this.backDay}>
                                     <ArrowBackIosOutlinedIcon />
-                                </IconButton>
-                                <IconButton color="secondary" aria-label="add an alarm" onClick={this.nextDay}>
+                                </IconButton> {this.state.date.date} <IconButton color="secondary" aria-label="add an alarm" onClick={this.nextDay}>
                                     <ArrowForwardIosIcon />
-                                </IconButton></div>
+                                </IconButton></p>
                         </div>
 
 
                         : <div>
-                            <p>{this.state.safeDate}</p>
-                            <div >
-                                <IconButton color="secondary" aria-label="add an alarm" onClick={this.backDay}>
+                            <p id='HomeDate'><IconButton color="secondary" aria-label="add an alarm" onClick={this.backDay}>
                                     <ArrowBackIosOutlinedIcon />
-                                </IconButton>
-                                <IconButton color="secondary" aria-label="add an alarm" onClick={this.nextDay}>
-                                    <ArrowForwardIosIcon className={classes.flechaDerecha} />
-                                </IconButton></div>
+                                </IconButton> {this.state.safeDate} <IconButton color="secondary" aria-label="add an alarm" onClick={this.nextDay}>
+                                    <ArrowForwardIosIcon />
+                                </IconButton></p>
                         </div>
 
 

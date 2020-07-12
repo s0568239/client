@@ -2,6 +2,8 @@ import MensaSelect from './SelectMensa';
 import React from 'react';
 import { Card, CardContent } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import LocationCityIcon from '@material-ui/icons/LocationCity';
 
 const useStyles = theme => ({
     root: {
@@ -14,7 +16,15 @@ const useStyles = theme => ({
         position: "left",
         backgroundColor: '#FFFFFF',
         boxShadow: 3
-    }
+    },
+    LocationIcon:{
+        color: '#696969',
+        fontSize: '15px'
+      },
+      CityIcon:{
+        color: '#696969',
+        fontSize: '15px'
+      }
 });
 
 class MensenSicht extends React.Component {
@@ -50,10 +60,10 @@ class MensenSicht extends React.Component {
                     <h2 id='HomeTitle2'>Mensa-Auswahl</h2>
                     <hr id='line' />
                     <MensaSelect value={this.state.mensaName} select={this.selecting} />
-                    <Card className={classes.root}>
+                    <Card className={classes.root}> 
                         <CardContent>
-                            <h4 id='MeineMensaSubtitel'>{this.state.data.name}</h4>
-                            <p id='cardsMensen'>{this.state.data.address}</p>
+                            <h4 id='MeineMensaSubtitel'><LocationCityIcon className={classes.CityIcon} /> {this.state.data.name}</h4>
+                            <p id='cardsMensen'><LocationOnIcon className={classes.LocationIcon} /> {this.state.data.address}</p>
                         </CardContent>
                     </Card>
                 </div>
