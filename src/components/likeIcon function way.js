@@ -40,7 +40,6 @@ export default function LikeIcon(props) {
         };
         const response = await fetch('/mygericht/' + tg.id, requestOptions);
         const data = await response.json();
-        console.log(data)
     }
 
     const isLiebling = () => {

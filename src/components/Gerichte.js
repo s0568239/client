@@ -41,7 +41,7 @@ export default function Gerichte() {
         };
         const response = await fetch('/mygericht/' + tg.id, requestOptions);
         const data = await response.json();
-        console.log(data)
+        
     }
 
     const essen2 = Thedata('/mygericht/')
