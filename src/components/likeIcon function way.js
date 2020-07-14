@@ -2,12 +2,8 @@ import React, { useState} from 'react';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import IconButton from '@material-ui/core/IconButton';
-import useStyle from './UseStyles';
-import Thedata from './FetchMyMensa';
-
-
-
-
+import useStyle from '../functional/UseStyles';
+import Thedata from '../functional/FetchMensa';
 
 export default function LikeIcon(props) {
     const lieblingsGericht = useStyle()
@@ -52,13 +48,13 @@ export default function LikeIcon(props) {
 
         for (var i in meineGerichte) {
 
-            //console.log(meineGerichte[1].id + " mm")
             if (g.id == meineGerichte[i].id) {
                 
-                bool.push(<FavoriteOutlinedIcon className={lieblingsGericht.HerzIcon}/>);
+                bool.push(<FavoriteOutlinedIcon className={lieblingsGericht.HerzIcon} key="tableModeButton"/>);
 
             } else {
-                bool.push(<FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} />);
+                
+                bool.push(<FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} key="tableModeButton"/>);
                 bool.pop(0)
             }
             
@@ -71,17 +67,17 @@ export default function LikeIcon(props) {
     if (meineGerichte == "" || t == "") {
         if (!isAdded) {
             return (
-                <IconButton key="tableModeButton"
+                <IconButton key="tableModeButton4"
                     onClick={() => { postGericht(g) }}
                 >
-                    <FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} />
+                    <FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} key="tableModeButton" />
                 </IconButton>
             )
         } else{
             return(
                 
-                <IconButton onClick={() => { deleteGericht(g); window.location.reload() }}>
-                    <FavoriteOutlinedIcon className={lieblingsGericht.HerzIcon}/>
+                <IconButton onClick={() => { deleteGericht(g); window.location.reload() }} key="tableModeButton">
+                    <FavoriteOutlinedIcon className={lieblingsGericht.HerzIcon} key="tableModeButton"/>
                 </IconButton>
             )
             
@@ -89,7 +85,7 @@ export default function LikeIcon(props) {
     } else {
         if (isDelete) {
             return (
-                <IconButton onClick={() => { deleteGericht(g) }}>
+                <IconButton onClick={() => { deleteGericht(g) }} key="tableModeButton">
                     {t}
                 </IconButton>
             )
@@ -97,72 +93,12 @@ export default function LikeIcon(props) {
             return (
                 <IconButton key="tableModeButton"
                     onClick={() => { postGericht(g); window.location.reload() }}
+                    
                 >
-                    <FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} />
+                    <FavoriteBorderOutlinedIcon className={lieblingsGericht.HerzIcon} key="tableModeButton"/>
                 </IconButton>)
         }
         
     }
 
-
-
-
-
-    //  https://stackoverflow.com/questions/41852930/reactjs-how-to-change-an-icon-of-a-button-on-the-click-event
-    /* render() {
-        const g = this.props.g
-        const myLiebling = this.isLiebling(g);
-        /* console.log(this.state.readyLiebling["id"] + " testing") */
-    /* if(this.state.isCardView){
-        postGericht(g)
-    } */
-    /* if(myLiebling){
-        return(
-            <IconButton key="tableModeButton" >
-            <FavoriteBorderOutlinedIcon />
-        </IconButton>
-        )
-    }else{
-        return(
-            <IconButton key="tableModeButton"
-            onClick={() => {
-                this.setState({
-                    gericht: g
-                })
-                this.setState({
-                    isCardView: !this.state.isCardView
-                })
-                if(!this.state.isCardView){
-                    postGericht(g)
-                }
-                
-                
-            }
-
-            } >
-            {this.state.isCardView ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
-        </IconButton>
-        )
-    } 
-         */
-
-    /* return (
-        <IconButton key="tableModeButton"
-            onClick={() => {
-                this.setState({
-                    gericht: g
-                })
-                this.setState({
-                    isCardView: !this.state.isCardView
-                })
-                if(!this.state.isCardView){
-                    postGericht(g)
-                }
-                
-                
-            }
-
-            } >
-            {this.state.isCardView ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
-        </IconButton>) */
 }

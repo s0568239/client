@@ -19,7 +19,7 @@ import MyHome from './Home';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import Gerichte from './Gerichte';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
-import useStyles from './UseStyles';
+import useStyles from '../functional/UseStyles';
 import EmojiFoodBeverageIcon from '@material-ui/icons/EmojiFoodBeverage';
 import MensenSicht from './mensenSicht';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
@@ -136,10 +136,10 @@ export default function SimpleMenu() {
     <Router>
       <div>
         {["left"].map(anchor => (
-          <Grid >
+          <Grid key="GridKey">
             <MuiThemeProvider theme={mytheme}>
               <React.Fragment key={anchor}>
-                <AppBar title="Login" position="static" onLef color="primary">
+                <AppBar title="Login" position="static" color="primary">
                   <Toolbar>
 
                     <IconButton edge="start" color="secondary" aria-label="menu">
@@ -192,7 +192,7 @@ export default function SimpleMenu() {
                 <div>
                   <Switch>
                     <Route exact path="/">
-                      <MyHome />
+                      <MyHome key="MyHOmeKey"/>
                     </Route>
                     <Route exact path="/mensensearch">
 
@@ -200,13 +200,13 @@ export default function SimpleMenu() {
 
                     </Route>
                     <Route exact path="/mensa">
-                      <MeineMensa />
+                      <MeineMensa key="tableModeButton16"/>
                     </Route>
                     <Route exact path="/lovefood">
-                      <Gerichte />
+                      <Gerichte key="tableModeButton17"/>
                     </Route>
                     <Route exact path="/notification">
-                      <Notification />
+                      <Notification key="tableModeButton18"/>
                     </Route>
                   </Switch></div>
               </React.Fragment>

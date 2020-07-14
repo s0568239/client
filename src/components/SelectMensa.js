@@ -23,7 +23,7 @@ class MensaSelect extends React.Component {
 
         return (
             <div>
-                <FormControl className={classes.root} >
+                <FormControl className={classes.root} key="tableModeButton20">
                     <InputLabel id='smallLabel' htmlFor="age-native-required">Wähle eine Mensa aus</InputLabel>
                     <Select
                         native

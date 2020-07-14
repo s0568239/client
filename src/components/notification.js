@@ -8,7 +8,7 @@ class Notifications extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            status: localStorage.getItem('status')
+            status: localStorage.getItem('status') || false
         };
         this.nextDay = this.handleChange.bind(this);
     }
@@ -49,7 +49,7 @@ class Notifications extends React.Component {
     render() {
 
         return (
-            <div>
+            <div key="notification">
                 <h2 id='HomeTitle2'>Benachrichtigungen verwalten</h2>
                 <hr id='line' />
                 <div>
@@ -65,28 +65,7 @@ class Notifications extends React.Component {
                 </div>
 
             </div>
-            /* <div>
-              <button className='btn btn-info'
-                onClick={this.createNotification('info')}>Info
-              </button>
-              <hr/>
-              <button className='btn btn-success'
-                onClick={this.createNotification('success')}>Success
-              </button>
-              <hr/>
-              <button className='btn btn-warning'
-                onClick={this.createNotification('warning')}>Warning
-              </button>
-              <hr/>
-              <button className='btn btn-danger'
-                onClick={this.createNotification('error')}>Error
-              </button>
-       
-              <NotificationContainer/>
-            </div> */
-
-
-
+            
         );
     }
 }

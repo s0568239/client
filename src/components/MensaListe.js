@@ -1,5 +1,5 @@
 import React from 'react';
-import UseDataFetch from './FetchMensa';
+import UseDataFetch from '../functional/FetchMensa';
 
 const Mensaliste = () => {
     const data = UseDataFetch('/mensen');
@@ -7,11 +7,11 @@ const Mensaliste = () => {
     const postTitle = () => {
         if (data) {
             for (var i in data) {
-                options.push(<option value={data[i].name}>{data[i].name}</option>);
+                options.push(<option value={data[i].name} key={i}>{data[i].name}</option>);
             }
             return options;
         } else {
-            return <h2>Daten werden geladen...</h2>;
+            return <option key={i}>Daten werden geladen...</option>;
         }
     };
 

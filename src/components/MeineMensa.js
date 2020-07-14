@@ -2,13 +2,15 @@ import React from "react";
 import MensaSelect from './SelectMensa';
 import Button from '@material-ui/core/Button';
 import MensaPosition from './nearMensa';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 class MeineMensa extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mensaName: null,
-            data: null,
+            mensaName: "",
+            data: [],
             liebling: {},
             isLoaded: false
         };
@@ -61,16 +63,18 @@ class MeineMensa extends React.Component {
 
     alertF = () => {
         this.postrequest()
-        alert("Deine lisblingsmensa wurde geändert!")
-        window.location.reload(false);
+        setTimeout(function() {
+            document.location.reload()
+      }, 750);
+        NotificationManager.info("Deine lisblingsmensa wurde geändert!2")
     }
 
     render() {
         const { liebling, isLoaded } = this.state
-        
+
         if (isLoaded) {
             return (
-                <div>
+                <div >
                     <div>
                         <h2 id='HomeTitle2'>Aktuelle Lieblingsmensa</h2>
                         <hr id='line'></hr>
@@ -78,7 +82,7 @@ class MeineMensa extends React.Component {
                         <div>
                             <h2 id='HomeTitle2'>In deiner Nähe</h2>
                             <hr id='line'></hr>
-                            <MensaPosition/>
+                            <MensaPosition />
                         </div>
                         <h2 id='HomeTitle2'>Mensa auswählen</h2>
                         <hr id='line'></hr>
@@ -87,7 +91,9 @@ class MeineMensa extends React.Component {
                         <MensaSelect value={this.state.mensaName} select={this.selecting} />
                         <Button onClick={this.alertF}>Speichern</Button>
                     </div>
+                    <NotificationContainer />
                 </div>
+
 
             )
         } else {

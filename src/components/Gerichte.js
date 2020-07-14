@@ -1,5 +1,5 @@
 import React from 'react';
-import Thedata from './FetchDataGericht';
+import Thedata from '../functional/FetchDataGericht';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,7 +7,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import { makeStyles } from "@material-ui/core/styles";
-import useStyleIcon from './UseStyles';
+import useStyleIcon from '../functional/UseStyles';
 
 const useStylesCard = makeStyles({
     rootCard: {
@@ -50,7 +50,7 @@ export default function Gerichte() {
 
         for (var i in essen2) {
             cards.push(
-                <Card className={CardClass.rootCard}>
+                <Card className={CardClass.rootCard} key={i}>
                      
                     <CardContent>
                     <CardActions className={CardClass.deleteButton}>

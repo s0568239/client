@@ -25,9 +25,9 @@ class MyHome extends Component {
         //console.log(data2[0].name + " this data")
         if (isLoaded) {
             return (
-                <div>
-                    <p id="HomeTitle1">{data2[0].name}</p>
-                    <TimeHome />
+                <div key="HOMEKEY">
+                    <p id="HomeTitle1" key="tableModeButton17">{data2[0].name}</p>
+                    <TimeHome key="T"/>
                 </div>
             )
         } else {

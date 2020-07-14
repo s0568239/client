@@ -1,12 +1,12 @@
 import React, {useState } from "react";
 import { Card, CardActions, IconButton } from "@material-ui/core";
 import CardContent from '@material-ui/core/CardContent';
-import Localitation from './fetchNearMensa';
+import Localitation from '../functional/fetchNearMensa';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import Thedata from './FetchMyMensa';
+import Thedata from '../functional/FetchMyMensa';
 import { makeStyles } from "@material-ui/core/styles";
-import useStyle from './UseStyles';
+import useStyle from '../functional/UseStyles';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 
