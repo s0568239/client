@@ -61,12 +61,12 @@ class MeineMensa extends React.Component {
         return dataM
     }
 
-    alertF = () => {
+    alertF = (l) => {
         this.postrequest()
-        setTimeout(function() {
+        /* setTimeout(function() {
             document.location.reload()
-      }, 750);
-        NotificationManager.info("Deine lisblingsmensa wurde geändert!2")
+      }, 1000); */
+        NotificationManager.success("Deine Lisblingsmensa wurde geändert!", 5000 , 500000)
     }
 
     render() {

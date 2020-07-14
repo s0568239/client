@@ -8,6 +8,8 @@ import Thedata from '../functional/FetchMyMensa';
 import { makeStyles } from "@material-ui/core/styles";
 import useStyle from '../functional/UseStyles';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 
@@ -44,8 +46,10 @@ function NearMensa() {
         setIsLike(!isLike)
         if (!isLike) {
             postrequest()
-            alert("Deine Mensa wurde soeben geändert!")
-            window.location.reload()
+            setTimeout(function() {
+                document.location.reload()
+          }, 1000);
+            NotificationManager.success("Deine Lisblingsmensa wurde geändert!")
         }
     }
 
@@ -78,7 +82,7 @@ function NearMensa() {
                         </IconButton>
                     </CardActions>
                 </Card>
-
+                <NotificationContainer/>
             </div>
            )
     } else {
@@ -99,7 +103,7 @@ function NearMensa() {
                     </IconButton>
                 </CardActions>
             </Card>
-
+            <NotificationContainer/>
         </div>
         
         );
