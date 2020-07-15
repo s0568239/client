@@ -87,7 +87,7 @@ export default function SimpleMenu() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <Link to="/home" className={classes.link}>
+        <Link to="/" className={classes.link}>
           <ListItem>
             <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText>
@@ -151,7 +151,7 @@ export default function SimpleMenu() {
 
                     <Typography variant="h6" color="secondary">
                       <Switch>
-                        <Route exact path="/home">
+                        <Route exact path="/">
                           Home
               </Route>
 
@@ -192,7 +192,7 @@ export default function SimpleMenu() {
                 </SwipeableDrawer>
                 <div>
                   <Switch>
-                    <Route exact path="/home">
+                    <Route exact path="/">
                       <MyHome key="MyHOmeKey"/>
                     </Route>
                     <Route exact path="/mensen-uebersicht">
