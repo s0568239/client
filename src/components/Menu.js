@@ -7,7 +7,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HomeIcon from '@material-ui/icons/Home';
-import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -87,7 +87,7 @@ export default function SimpleMenu() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <Link to="/" className={classes.link}>
+        <Link to="/home" className={classes.link}>
           <ListItem>
             <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText>
@@ -95,7 +95,7 @@ export default function SimpleMenu() {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link to="/mensa" className={classes.link}>
+        <Link to="/meine-mensa" className={classes.link}>
           <ListItem>
             <ListItemIcon><AccountBalanceIcon /></ListItemIcon>
             <ListItemText>
@@ -103,7 +103,7 @@ export default function SimpleMenu() {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link to="/lovefood" className={classes.link}>
+        <Link to="/meine-gerichte" className={classes.link}>
           <ListItem>
             <ListItemIcon><FastfoodIcon /></ListItemIcon>
             <ListItemText>
@@ -111,15 +111,15 @@ export default function SimpleMenu() {
             </ListItemText>
           </ListItem>
         </Link>
-        <Link to="/mensensearch" className={classes.link}>
+        <Link to="/mensen-uebersicht" className={classes.link}>
           <ListItem>
             <ListItemIcon><EmojiFoodBeverageIcon /></ListItemIcon>
             <ListItemText>
-              Mensa-Übersicht
+              Mensen Übersicht
             </ListItemText>
           </ListItem>
         </Link>
-        <Link to="/notification" className={classes.link}>
+        <Link to="/benachrichtigungen" className={classes.link}>
           <ListItem>
             <ListItemIcon><NotificationsActiveIcon /></ListItemIcon>
             <ListItemText>
@@ -134,6 +134,7 @@ export default function SimpleMenu() {
 
   return (
     <Router>
+      
       <div>
         {["left"].map(anchor => (
           <Grid key="GridKey">
@@ -150,20 +151,20 @@ export default function SimpleMenu() {
 
                     <Typography variant="h6" color="secondary">
                       <Switch>
-                        <Route exact path="/">
+                        <Route exact path="/home">
                           Home
               </Route>
 
-                        <Route exact path="/mensa">
+                        <Route exact path="/meine-mensa">
                           Meine Mensa
               </Route>
-                        <Route exact path="/lovefood">
+                        <Route exact path="/meine-gerichte">
                           Meine Gerichte
               </Route>
-                        <Route exact path="/mensensearch">
-                          Mensa-Übersicht
+                        <Route exact path="/mensen-uebersicht">
+                          Mensen Übersicht
               </Route>
-                        <Route exact path="/notification">
+                        <Route exact path="/benachrichtigungen">
                         Benachrichtigungen
               </Route>
                       </Switch>
@@ -191,21 +192,21 @@ export default function SimpleMenu() {
                 </SwipeableDrawer>
                 <div>
                   <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/home">
                       <MyHome key="MyHOmeKey"/>
                     </Route>
-                    <Route exact path="/mensensearch">
+                    <Route exact path="/mensen-uebersicht">
 
                       <MensenSicht />
 
                     </Route>
-                    <Route exact path="/mensa">
+                    <Route exact path="/meine-mensa">
                       <MeineMensa key="tableModeButton16"/>
                     </Route>
-                    <Route exact path="/lovefood">
+                    <Route exact path="/meine-gerichte">
                       <Gerichte key="tableModeButton17"/>
                     </Route>
-                    <Route exact path="/notification">
+                    <Route exact path="/benachrichtigungen">
                       <Notification key="tableModeButton18"/>
                     </Route>
                   </Switch></div>

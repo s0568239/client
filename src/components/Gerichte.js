@@ -31,7 +31,7 @@ export default function Gerichte() {
     const IconClass = useStyleIcon()
     //Löscht Lieblingsgericht
     const deleteGericht = async (g) => {
-        //setisDelete(false)
+        
         // POST request using fetch with async/await
         const tg = g
         const requestOptions = {
@@ -41,7 +41,7 @@ export default function Gerichte() {
         };
         const response = await fetch('/mygericht/' + tg.id, requestOptions);
         const data = await response.json();
-        
+        console.log(data)
     }
 
     const essen2 = Thedata('/mygericht/')

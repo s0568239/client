@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import TimeHome from './timeHome'
+import TimeHome from './timeHome';
+import { BrowserRouter as Redirect, Route, Router} from 'react-router-dom';
 
 
 class MyHome extends Component {
@@ -26,7 +27,7 @@ class MyHome extends Component {
         if (isLoaded) {
             return (
                 <div key="HOMEKEY">
-                    <p id="HomeTitle1" key="tableModeButton17">{data2[0].name}</p>
+                    <p id="HomeTitle1" key="tableModeButton17">{(data2[0].name === 'req.body.name') ? window.location.href ="/meine-mensa":data2[0].name}</p>
                     <TimeHome key="T"/>
                 </div>
             )

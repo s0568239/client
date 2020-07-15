@@ -119,8 +119,10 @@ class TimeHome extends Component {
             return fetch(url); // make a 2nd request and return a promise
         })
             .then(function (response) {
-                if (response != null) {
+                if (response.status === 200) {
                     return response.json();
+                }else{
+                    throw new Error('Keine Daten von Server zurückbekommen. Entweder ist heute Sonntag oder ist einen Feiertag', response.statusText)
                 }
             })
             .catch(function (error) {
@@ -288,7 +290,7 @@ class TimeHome extends Component {
         //const { classes } = this.props;
         return (
             <div>
-                <h2 id='HomeTitle2'>Öffnungszeiten</h2>
+                <h2 id='HomeTitle2'>Datum</h2>
                 <hr id='line'></hr>
                 {
                     (isEmpty2) ?

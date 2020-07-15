@@ -63,10 +63,10 @@ class MeineMensa extends React.Component {
 
     alertF = (l) => {
         this.postrequest()
-        /* setTimeout(function() {
+         setTimeout(function() {
             document.location.reload()
-      }, 1000); */
-        NotificationManager.success("Deine Lisblingsmensa wurde geändert!", 5000 , 500000)
+      }, 1000);
+        NotificationManager.success("Deine Lisblingsmensa wurde geändert!")
     }
 
     render() {
@@ -78,7 +78,7 @@ class MeineMensa extends React.Component {
                     <div>
                         <h2 id='HomeTitle2'>Aktuelle Lieblingsmensa</h2>
                         <hr id='line'></hr>
-                        <p id='HomeTitle1'>{liebling.name}</p>
+                        <p id='HomeTitle1'>{(liebling.name === 'req.body.name') ? <p>Keine Mensa ausgewählt</p>:liebling.name}</p>
                         <div>
                             <h2 id='HomeTitle2'>In deiner Nähe</h2>
                             <hr id='line'></hr>
