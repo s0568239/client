@@ -19,16 +19,9 @@ self.addEventListener('install', event => {
 
 // Cache and return the requests
 self.addEventListener('fetch', function(event) {
-    event.respondWith(
-      caches.open('mensa').then(function(cache) {
-        return cache.match(event.request).then(function (response) {
-          return response || fetch(event.request).then(function(response) {
-            cache.put(event.request, response.clone());
-            return response;
-          });
-        });
-      })
-    );
+    event.respondWith(fetch(event.request));
+    // or simply don't call event.respondWith, which
+    // will result in default browser behaviour
   });
 
 // Update service worker
