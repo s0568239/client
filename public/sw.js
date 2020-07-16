@@ -1,4 +1,4 @@
-var cacheName = 'task-manager-pwa';
+var cacheName = 'mensa';
 
 
 // Install service worker
@@ -10,23 +10,30 @@ self.addEventListener('install', event => {
                 console.log('Cache opened');
                 return cache.addAll([
                     '/',
+                    
                 ]);
             })
     );
 });
 
+
 // Cache and return the requests
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', function(event) {
     event.respondWith(
-        fetch(event.request).catch(function () {
-            return caches.match(event.request);
-        })
+      caches.open('mensa').then(function(cache) {
+        return cache.match(event.request).then(function (response) {
+          return response || fetch(event.request).then(function(response) {
+            cache.put(event.request, response.clone());
+            return response;
+          });
+        });
+      })
     );
-});
+  });
 
 // Update service worker
 self.addEventListener('activate', event => {
-    var cacheWhitelist = ['task-manager-pwa'];
+    var cacheWhitelist = [cacheName];
     event.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(

@@ -25,7 +25,7 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('./sw.js').then(function (registration) {
-          console.log('Worker registration is successful', registration.scope);
+          console.log('Der Worker wurde registriert', registration.scope);
         }, function (err) {
           console.log('Worker registration has failed', err);
         }).catch(function (err) {
